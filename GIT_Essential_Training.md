@@ -348,7 +348,6 @@ There are 2 ways:
 	3. `git checkout <sha1> -- <file>`
 	4. re-commit this checkout
 
-
 ### Reverting a commit
 
 There is a simple way to undo the last commit:
@@ -723,6 +722,8 @@ The -u option indicates Git that we want to track the \<remote> branch
 The \<remote> branch is actually our local *origin* branch. It's stored in .git/refs/remotes
 Remote branches are configured in .git/config
 
+Typically the command will be: `git push -u origin master`
+
 `git branch -r` displays the remote branches
 `git branch -a` displays all the branches
 
@@ -759,20 +760,120 @@ There are 3 simple rules to follow:
 
 ### Merging in fetched changes
 
-When we fecth, we only update the *origin* branch, not the *master* one. Therefore, if we want to bring those changes into our own *master*, we have to do a merge.
+When we fetch, we only update the *origin* branch, not the *master* one. Therefore, if we want to bring those changes into our own *master*, we have to do a merge.
 
+*origin* is a branch like any other, the only difference is that we cannot check it out (Git prevents us from that in order to keep good sync with the remote repo). SInce it's a regular branch, we merge it like any other.
 
+Note that when we merge, we do it on *origin*, noton the GitHub repo, so we need to fetch first.
+
+There is a convenient shortcut: `git pull`, which is equivalent
 
 ### Checking out remote branches
 
-### Purhing to an updated remote branch
+We cannot check out branches from the remote repo. Bu twhat we can do is create a new branch in our local repo, replicating the remote one:
+`git branch <new_branch> origin/<branch_replicated>`
+
+Another way: `git checkout -b <new_branch> origin/<branch_replicated>`
+
+### Pushing to an updated remote branch
+
+Git won't allow us to do a merge during a push.
+For example, we fetch the remote, work on some changes, and prepare a new commit ready to push. But in the meantime, other collaborators have pushed other commits. Therefore, our local is not in sync.
+
+What we have to do is:
+1. fetch again
+2. merge locally
+3. push
 
 ### Deleting a remote branch
 
+How to tell gitHub that we want to delete one of the branches in its remote repo
+
+`git push origin --delete <branch_to_delete>`
+
 ### Enabling collaboration
+
+To enable other Github users to collaborate on our repo, we have to enable them from GitHub's page: admin > collaborators > add
+
+If we want to collaborate on an Open Source project, the process is slightly different:
+1. first, make sure what changes we want to make and check if someoneelse has already worked on it (check forums, network, list issues, etc, on the main project Github page)
+2. fork the project (clone it to our GitHub account)
+3. develop
+4. submit a pull request (raise a demand to revise our code and incorporate it to the project)
 
 ### A collaboration workflow
 
+This is the typical workflow if we want to add a new feature (feedback form) to a repo on which we are collaborating
+
+\> `git checkout master`
+\> `git fetch`
+\> `git merge origin/master`
+\> `git checkout -b feedback_form`
+[work on the changes]
+\> `git add feedback.html`
+\> `git commit -m "Add customer feedback form"`
+[changes are now in the local repo branch]
+\> `git fetch`
+\> `git push -u origin feedback_form`
+
+From our collaborator's standpoint:
+
+\> `git checkout master`
+\> `git fetch`
+\> `git merge origin/master`
+[in case there are changes to merge]
+\> `git checkout -b feedback_form origin/feedback_form`
+[creates a local branch to check our changes]
+\> `git log`
+\> `git show <sha1>`
+[work on some changes]
+\> `git commit -am "Add tour selectr to feedback form"`
+\> `git fetch`
+[just to see if any other commits from other collabrators in the meantime]
+\> `git push`
+
+Back to our standpoint:
+
+\> `git fetch`
+[to bring the changes from collaborator]
+\> `git log -p feedback_form..origin/feedback_form`
+[to view the changes]
+\> `git merge origin/feedback_form`
+[I like the changes, so I merge]
+\> `git checkout master`
+[let's merge the changes back to master]
+\> `git fetch`
+\> `git merge origin/master`
+[to merge any changes just fetched]
+\> `git merge feedback_form`
+[to merge the changes to the feedback form (selector)]
+
+
+
+__________________
+
+## Tools and next steps
+
+### Setting up aliases for common commands
+
+We can add an alias with `git config --global alias.<keyword> "command"`
+
+Examples: 
+`git config --global alias.co "checkout"`
+`git config --global alias.logg "--graph --decorate --oneline --abbrev-commit --all"`
+
+Advice is to spend a while typing the original commands before using aliases
+
+### Using SSH keys for remote login
+
+This will allow us to conect to the remote repo without having to enter our username/pwd over and over again
+https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
+https://help.github.com/articles/connecting-to-github-with-ssh/
+
+### IDE integration
+
+Most modern IDE's have integration with GitHub.
+Check your favourite one to see how to do it.
 
 __________________
 
