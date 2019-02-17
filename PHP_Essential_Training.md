@@ -621,10 +621,10 @@ error_reporting(E_ALL | E_STRICT);
 error_reporting(E_ALL & ~E_DEPRECATED);
 
 // return the current level
-error_reporting();
+error_reporting();w
 ```
 
-Boradly, there are 4 categories of errors:
+Broadly, there are 4 categories of errors:
 1. Fatal errors
 	- PHP understood the code but could not execute it
 	- Ex: undefined variable
