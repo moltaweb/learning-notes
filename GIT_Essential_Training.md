@@ -1,4 +1,5 @@
 
+
 ### GIT vs SVN
 * Git is distributed (local repositories), SVN is central-repo
 * Git is 3-tree, SVN is 2-tree
@@ -9,9 +10,10 @@ __________
 
 ## What is GIT?
 
+
 ### Understanding version control
 
-GIT is a software that keeps tracks of changes on files and directories. And it is especially good in keepgin track of text changes.
+GIT is a software that keeps tracks of changes on files and directories. And it is especially good in keeping track of text changes.
 
 Git allows us to compare different versions of a document: it is a VCS (Version Control System). Most times, VCS's are actually used for Software development, this is why they are also called SCM (Cource Code Management). 
 
@@ -21,6 +23,7 @@ Examples of Version Control in non-source code:
 * Adobe Photoshope's History
 * Wikis
 * Undo (CTRL+Z)
+
 
 ### The history of GIT
 
@@ -49,6 +52,7 @@ Git features
 * faster than other SCMs
 * better safeguards against data corruption
 
+
 ### About distributed version control
 
 Let's see why this feature is so important.
@@ -76,6 +80,7 @@ Advantages:
 
 > In Git architecture, there is not a central repository, all repositories are considered equal
 
+
 ### Who should use Git?
 
 Primarily, code developers.
@@ -85,10 +90,15 @@ It's not that useful for tracking non-text files:
 * images, movies, music, fonts
 * word processor files, spreadhseets, pdf...
 
+
+
+_____________________-
+
 ## Installing Git
 
 On Linux:
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
 
 ### Configuring Git
 
@@ -113,6 +123,7 @@ __________
 
 ## Getting started
 
+
 ### Initializing a repository
 
 We just need to go to the folder we want for our project and type
@@ -120,10 +131,12 @@ We just need to go to the folder we want for our project and type
 
 This will create the .git folder
 
+
 ### Understanding where Git files are stored
 
 Git creates a hidden folder .git/ at the top root of our project folder. Inside it, it stores all the files needed to track the repository.
 If we wanted to stop tracking, we would simply delete this .git folder.
+
 
 ### Performing your first commit
 
@@ -131,6 +144,7 @@ Basically the process is:
 1. make changes
 2. add the changes: `git add .`
 3. commit the changes: `git commit -m "message for the commit"`
+
 
 ### Writing commit messages
 
@@ -145,6 +159,7 @@ Best practices:
 * be clear and descriptive
 	* bad: "update login code"
 	* good: "change user authentication to use Blowfish"
+
 
 ### Viewing the commit log
 
@@ -170,6 +185,7 @@ __________
 
 ## Git concepts and architecture
 
+
 ### Exploring the 3-trees architecture
 
 A tree is a project folder, with subfolders and files
@@ -187,6 +203,7 @@ In Git's 3-trees architecture, there's an intermediate stage:
 
 The stage allows us to commit only a set of files within a change set.
 
+
 ### The Git workflow
 
 This is the basic process we will follow:
@@ -200,12 +217,14 @@ In a typical workflow, changes are not only on single files, but rather to sets 
 This workflow also applies for file editing.
 
 
+
 ### Using hash values (SHA-1)
 
 Let's see how Git refers to its commits 
 ![enter image description here](img/git-parent-hashes.png)
 
 For each commit, Git generates a unique ID based on SHA-1 algorithm. It passes in all the changes committed and generates a 40-digit hexadecimal checksum. This checksum is the ID of the commit (the one we see with `git log`
+
 
 ### Working with the HEAD pointer
 
@@ -221,16 +240,19 @@ __________
 
 ## Making changes to files
 
+
 ### Adding files
 
 `git status` gives us the current status of our working directory
 
 We use `git add` to add files to the staging index
 
+
 ### Editing files
 
 Once we understand how the staging works, we can modify files in our working environment, stage them and commit them.
 In this movie we modify files 1 and 2 and commit them as a changeset.
+
 
 ### Viewing changes with diff
 
@@ -241,12 +263,14 @@ With `git status` we can see what has changed. With `git diff` we can see the ac
 
 `diff` has many options that we can use to customize. Check manual.
 
+
 ### Viewing only staged changes
 
 To compare what we have in the stage vs. the repository we use
 `git diff --staged`
 
 > In older versions of Git < 1.6, staged was called cached
+
 
 ### Deleting files
 
@@ -265,6 +289,7 @@ Delete the file directly in the repo
 
 The difference is that in Option 1, the file will be in the trash can of the OS. In Option 2 we do a Unix rm.
 In both cases, the file will be kept in previous versions of the repo. 
+
 
 ### Moving and renaming files
 
@@ -301,6 +326,7 @@ __________
 
 ## Undoing changes
 
+
 ### Undoing working directory changes
 
 This happens when we are working in our file(s) in the WD, we modify them and we save them. If that was a mistake, we need a way to bring our files to a previous wanted status.
@@ -318,6 +344,7 @@ This brings the file from the repo back to our WD.
 
 > I think `git checkout -- <file>` does not work if there is something in the stage
 
+
 ### Unstaging files
 
 Now let's see how to unstage files, ie, remove them from the staging area.
@@ -327,6 +354,9 @@ This happens typically when we are building a commit. We put our changes in the 
 To do this:
 `git reset HEAD <file>`
 
+To unstage everything: `git reset`
+
+
 ### Amending commits
 
 Git only allows us to edit the last commit we have done. Earlier than that we cannot, since that would break SHA1 data integrity.
@@ -335,6 +365,7 @@ We can either modify the contents of the commit (ie, the changes in the files), 
 `git commit --amend -m "message for the amended commit"`
 
 This will **replace** the last commit.
+
 
 ### Retrieving old versions
 
@@ -348,6 +379,7 @@ There are 2 ways:
 	3. `git checkout <sha1> -- <file>`
 	4. re-commit this checkout
 
+
 ### Reverting a commit
 
 There is a simple way to undo the last commit:
@@ -355,6 +387,7 @@ There is a simple way to undo the last commit:
 This will undo all the actions in the last commit backwards.
 
 In case more difficult changes have been done (file renaming, etc) a revert may not be enough. Then we might need a merge (we will see that).
+
 
 ### Using reset to undo commits
 
@@ -369,6 +402,7 @@ Basically it sets HEAD at N commits back and then we start re-commiting from tha
 
 When we use `git reset` to move HEAD around, it's a good idea to copy the log in a .txt
 
+
 ### Demonstrating a soft reset
 
 `git reset --soft <sha1>`
@@ -376,15 +410,18 @@ When we use `git reset` to move HEAD around, it's a good idea to copy the log in
 If we do `git status` we will see that the reverted fles are in the staging area.
 This option is the safest.
 
+
 ### Demonstrating a mixed reset
 
 `git reset --mixed <sha1>`
+
 
 ### Demonstrating a hard reset
 
 `git reset --hard <sha1>`
 
 This option completely erases our work from the WD and the staging. It leaves the staging empty.
+
 
 ### Removing untracked files
 
@@ -398,6 +435,7 @@ There are several options we can use:
 __________
 
 ## Ignoring files
+
 
 ### Using .gitignore files
 
@@ -414,6 +452,7 @@ assets/videos/ --> ignore the contents of this folder
 
 .gitignore itself must be tracked in the project (do not ignore it!)
 
+
 ### Understanding what to ignore
 
 We typically want to ignore:
@@ -427,6 +466,7 @@ Good resources:
 https://help.github.com/articles/ignoring-files/
 https://github.com/github/gitignore
 
+
 ### Ignoring files globally
 
 Probably we will find ourselves ignoring the same files all the time, in all our projects. Rather than ignoring everything all the time in every project, we can configure Git to ignore files globally, for all the projects.
@@ -437,11 +477,13 @@ To set it up:
 `git config --global core.excludesfile <filename>`
 `<filename>` can be named anything we want, for example: `~/.gitignore_global`
 
+
 ### Ignoring tracked files
 
 Ignoring files works for files we have not tracked/commited yet. If we want to ignore files that have been previously tracked so far, we first have to untrack them.
 
 To do so: `git rm --cached <file>`
+
 
 ### Tracking empty directories
 
@@ -456,6 +498,7 @@ __________
 
 ## Navigating the commit tree
 
+
 ### Referencing commits
 
 There are several ways to reference commits in Git:
@@ -467,12 +510,14 @@ There are several ways to reference commits in Git:
 
 In Git, *tree-ish* is something that references part of the tree. In its simplest term, it's a reference to a commit.
 
+
 ### Exploring tree listings
 
 A tree is like a directory listing. 
 We can list the contents of a tree with `git ls-tree <tree-ish>`
 
 Everything in Git is either a blob (file) or a tree (directory). Each has its own SHA1 that we can reference (they are also tree-ish)
+
 
 ### Getting more from the commit log
 
@@ -496,9 +541,11 @@ Everything in Git is either a blob (file) or a tree (directory). Each has its ow
 
 A good typical command is `git log --oneline --graph --all --decorate`
 
+
 ### Viewing commits
 
 We can examine a specific commit with `git show <tree-ish>`
+
 
 ### Comparing commits
 
@@ -518,11 +565,13 @@ __________
 
 ## Branching
 
+
 ### Branching overview
 
 In Git, branches are cheap. Easy to create and work with. Git encourages usage of branches to:
 * try new ideas
 * isolate features or sections of work
+
 
 ### Viewing and creating branches
 
@@ -534,13 +583,16 @@ Right after creation, the branch is created but:
 * it points to the same HEAD until we commit it
 * our current branch is still the previous until we switch
 
+
 ### Switching branches
 
 `git checkout <new_name>` to switch to the new branch
 
+
 ### Creating and switching branches
 
 `git checkout -b <new_name>` to create a new branch and switch to it at the same time
+
 
 ### Switching branches with uncommited changes
 
@@ -548,6 +600,7 @@ Git won't let us switch a branch (checkout) if we have unsaved files in our WD *
 1. Discard the changes (checkout the file)
 2. Commit the changes
 3. Stash the changes (save them for later)
+
 
 ### Comparing branches
 
@@ -558,9 +611,11 @@ Nice options:
 
 `git branch --merged` displays all the branches that are already included in our current branch
 
+
 ### Renaming branches
 
 `git branch -m <old_name> <new_name>` allows us to move/rename existing branches
+
 
 ### Deleting branches
 
@@ -569,6 +624,7 @@ Nice options:
 Notes:
 * we cannot delete the currently checked out branch
 * we cannot delete branches with unmerged changes (we have to use -D option)
+
 
 ### Configuring the command prompt to show the branch
 
@@ -579,6 +635,7 @@ __________
 
 ## Merging branches
 
+
 ### Merging code
 
 Merging is the action of bringing changes done in one branch, onto another.
@@ -587,6 +644,7 @@ The process is simple:
 1. we must check out the branch that is going to *receive* the changes
 2. make sure the WD is clean
 3. `git merge <branch_to_merge>`
+
 
 ### Using fast-forward merge vs. true merge
 
@@ -600,6 +658,7 @@ Options:
 
 A *true merge* happens when there have been more commits in the receiving branch since the checkout. 
 
+
 ### Merging conflicts
 
 git does a very good job at figuring out how to automatically resolve merges.
@@ -607,6 +666,7 @@ git does a very good job at figuring out how to automatically resolve merges.
 But conflicts arise when 2 commits modify the same line(s).
 
 If we try and merge 2 conflicting branches, Git will stop us at an intermediate step, and will point out the conflicts. We identify the intermediate state by a new prompt *(branch[MERGING])*.
+
 
 ### Resolving merge conflicts
 
@@ -620,6 +680,7 @@ To abort the merge we do `git merge --abort` from the intermediate state
 To resolve the conflicts manually we will have to go line by line and modify the conflicting files
 
 Now again we can do `git log --oneline --graph --all --decorate` to display a nice graph of our branches
+
 
 ### Exploring strategies to reduce merge conflicts
 
@@ -635,6 +696,7 @@ _______________________
 
 ## Stashing changes
 
+
 ### Saving changes in the stash
 
 The stash is a place where we can save files temporarily if we don't want to commit them to the repository. It's a special 4th area in Git, separate from the repo, the WD and the staging index.
@@ -642,6 +704,7 @@ The stash is a place where we can save files temporarily if we don't want to com
 The changes we put in the stash are a lot like commits, but without an associated SHA1
 
 Typical application is when we have some changes in the WD and we want to checkout another branch (master) to see what is contains. If we are not ready to commit, but want to keep the changes from the WD we can do `git stash save "<message>"`
+
 
 ### Viewing stashed changes
 
@@ -652,6 +715,7 @@ To display a specific stash: `git stash show [-p] stash@{0}`. The -p option disp
 
 > The same stash is accessible from any current branch we check out
 
+
 ### Retrieving stashed changes
 
 To bring our changes back to the WD (load the stash) we do `git stash pop stash@{0}` or `git stash apply stash@{0}`
@@ -660,6 +724,7 @@ The difference is that `pop` loads and deletes from the stash, while `apply` loa
 Typically we will use `pop`
 
 > If we have something in the WD and retrieve the stash, we may have to deal with conflicts, just like in a merge
+
 
 ### Deleting stashed changes
 
@@ -672,6 +737,7 @@ If we want to clear the stash completely we can do `git stash clear`
 ______________
 
 ## Remotes
+
 
 ### Using local and remote repositories
 
@@ -695,7 +761,9 @@ so generally speaking, the process when working with remote servers will be:
 3. merge *origin* onto *master*
 4. push the result back up to the remote repo
 
+
 ### Setting up a GitHub account
+
 
 
 
@@ -705,18 +773,23 @@ In order to connect to a remote repo, we have to have it created first in the re
 Then we need to add it locally so that Git knows where to find it. We do so with:
 `git remote add <alias> <url>`
 
-\<url> is the HTTPS URL provided by the remote server
+`<url>` is the HTTPS URL provided by the remote server
 
-> Typically we will use *origin* as \<alias>
+> Typically we will use *origin* as `<alias>`
 
 Once added, we can see the remotes in our project with `git remote -v`
 We can have several remotes, not just one.
 
 To remove it: `git remote rm <alias>`
 
+
 ### Creating a remote branch
 
 `git push -u <remote> <local>` let us push our \<local> branch onto the equivalent \<remote> one.
+
+```git
+git push -u origin master
+```
 
 The -u option indicates Git that we want to track the \<remote> branch
 The \<remote> branch is actually our local *origin* branch. It's stored in .git/refs/remotes
@@ -727,6 +800,7 @@ Typically the command will be: `git push -u origin master`
 `git branch -r` displays the remote branches
 `git branch -a` displays all the branches
 
+
 ### Cloning a remote repository
 
 Let's see the reverse procedure. Clome a remote repo to work on it locally. 
@@ -736,14 +810,17 @@ Let's see the reverse procedure. Clome a remote repo to work on it locally.
 
 -b option let's us choose the branch we want to clone, by default it will be the master branch. Git automatically tracks locally the remote branch (smilarly to `git push -u`)
 
+
 ### Tracking remote branches
 
 We can track remote branches with -u option in push
 When we clone a remote repo it's tracked automatically
 
+
 ### Pushing changes to a remote repository
 
 Once we are tracking a remote branch, we can simply push changes with `git push`
+
 
 ### Fetching changes from a remote repository
 
@@ -758,6 +835,7 @@ There are 3 simple rules to follow:
 3. fetch before leaving Internet connection
 4. fetch as often as possible
 
+
 ### Merging in fetched changes
 
 When we fetch, we only update the *origin* branch, not the *master* one. Therefore, if we want to bring those changes into our own *master*, we have to do a merge.
@@ -768,12 +846,14 @@ Note that when we merge, we do it on *origin*, noton the GitHub repo, so we need
 
 There is a convenient shortcut: `git pull`, which is equivalent
 
+
 ### Checking out remote branches
 
 We cannot check out branches from the remote repo. Bu twhat we can do is create a new branch in our local repo, replicating the remote one:
 `git branch <new_branch> origin/<branch_replicated>`
 
 Another way: `git checkout -b <new_branch> origin/<branch_replicated>`
+
 
 ### Pushing to an updated remote branch
 
@@ -785,11 +865,13 @@ What we have to do is:
 2. merge locally
 3. push
 
+
 ### Deleting a remote branch
 
 How to tell gitHub that we want to delete one of the branches in its remote repo
 
 `git push origin --delete <branch_to_delete>`
+
 
 ### Enabling collaboration
 
@@ -800,6 +882,7 @@ If we want to collaborate on an Open Source project, the process is slightly dif
 2. fork the project (clone it to our GitHub account)
 3. develop
 4. submit a pull request (raise a demand to revise our code and incorporate it to the project)
+
 
 ### A collaboration workflow
 
@@ -854,6 +937,7 @@ __________________
 
 ## Tools and next steps
 
+
 ### Setting up aliases for common commands
 
 We can add an alias with `git config --global alias.<keyword> "command"`
@@ -864,11 +948,13 @@ Examples:
 
 Advice is to spend a while typing the original commands before using aliases
 
+
 ### Using SSH keys for remote login
 
 This will allow us to conect to the remote repo without having to enter our username/pwd over and over again
 https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
 https://help.github.com/articles/connecting-to-github-with-ssh/
+
 
 ### IDE integration
 
