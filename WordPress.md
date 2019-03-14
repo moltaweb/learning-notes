@@ -2375,3 +2375,148 @@ ________________________
 1. validate the code
 1. test across platforms, devices and browsers
 1. check for web accessibility
+
+
+__________________________________
+
+# MIGRATE WORDPRESS WITH WP MIGRATE DB
+
+________________________________
+
+## Introduction
+
+### WP Migration in 3 steps
+
+WordPress is a CMS that consists of a set of PHP files that interact with a database. All the content lies in the DB. The content and the application is completely separate.
+
+The WP core is entirely replaceable. But these are not:
+1. Themes
+2. Plugins
+3. Uploads
+4. Database
+
+WP migration consists of moving these 4 assets to a new location.
+
+For files (1-3) it's easy, we just need to copy them to the new location via FTP or similar.
+
+The tricky part is the database, because origin and destination may have different filesystems, all the URL in the database must be rewritten to match the destination. This is where plugins like WP Migrate DB come in place.
+
+The migration is done in 3 steps:
+1. Set up the target site (as brand new)
+2. Migrate themes, plugins and uploads manually
+3. Migrate the database
+
+
+_________________________
+
+## Using WP Migrate DB
+
+### Move the necessary files with FTP
+
+We create a new site with the **same table prefix in the DB**
+
+We just need to copy the contents of `wp-content` folder.
+
+This may take a while. After completed, we will see that all the themes and plugins are there. 
+
+We don't need to activate plugins or themes, as this information is in the database, so they will be automatically activated once we migrate the DB
+
+> Media files do not appear in WP backend so far. This is because Media objects are stored as posts in the DB, so they will appear once we migrate the DB
+
+
+### Install WP Migrate on both sides
+
+For the migration process to run smoothly, we need to install and activate the plugin on both origin and destination sites.
+
+
+### The importance of matching table prefixes
+
+We have to make sure that table prefixes in `wp-config.php` are the same in the destination site. 
+
+> Apparently we can modify wp-config.php after intial installation, it doesn't seem to be a problem
+
+
+### Export the origin database using WP Migrate DB
+
+Using the free version of the plugin requires a 2-step process:
+1. export the origin DB
+2. import the DB into the detination site
+
+We could do this directly in phpMyAdmin, but it's an error-prone process as we would have to mess with search/replace old URL's with new one. Plus we could break any serialized data.
+
+WP Migrate DB does all this heavy lifting for us.
+
+The plugin is installed under Tools/Migrate DB
+
+Tab *Migrate*. Select:
+* Save file in the computer (we need to upload it later)
+* Compress as gzip (phpMyAdmin can upload .gzip)
+* Find / Replace
+    * Add if necessary https://old.com and http://new.com **after the first domain replacement**
+
+> Here the trick is to install the plugin also in the destination server. That way when we log in to the plugin, we can just directly copy the local URL and path.
+
+* Advanced Options. Check: 
+    * Replace GUIDs
+    * Exclude spam comments
+    * Exclude transients
+
+Click *Export* and obtain the .gzip file
+
+
+### Import the database to the target site using phpMyAdmin
+
+Now let's swith to the target site. In phpMyAdmin, navigate to the site's database.
+
+The process is:
+1. clear out the existing database
+2. import the contents from the export file
+
+To clear out:
+1. go to *Structure* and then
+2. Select *Check all*
+3. select *Drop*
+
+Now if we go to our target site, we should be redirected to the `install.php` page
+
+Go back to phpMyAdmin
+1. select Import tab
+2. Browse -> select the .gzip
+3. Click *go*
+
+This should be it
+
+
+### Other migration patterns
+
+If we want to migrate one WWW site to another, we just need to:
+
+1. Download files from WWW-1 to PC using FTP
+2. Download database from WWW-1 to PC using WP Migrate
+1. Upload files from WWW-1 to PC using FTP
+2. Upload database from WWW-1 to PC using WP Migrate
+
+
+
+
+______________________
+
+## Common Problems and Solutions
+
+### White screen of death
+
+Most times, following a migration, the reason is that the theme is not available
+
+To fix it, just access `./wp-admin`
+
+
+### When the manual database import fails
+
+
+### WP Migrate DB ate my posts
+
+
+### Media files are not working
+
+
+### The migration failed
