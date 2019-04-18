@@ -35,16 +35,18 @@ switch(variable) {
 }
 ```
 ```java
+// for loop
 for(int i = 0; i<10; i++) {
      // code
 }
 
+// while loop
 while(condition) {
      // code
      // condition revision to avoid infinite loop
 }
 
-
+// do-while loop
 do {
      // code
      // condition revision to avoid infinite loop
@@ -64,7 +66,7 @@ do {
 
 We use the built-in Scanner class (java.util)
 
-```
+```java
 Scanner scanner = new Scanner(System.in)
 String input = scanner.nextLine();
 scanner.close();
@@ -1497,5 +1499,5 @@ Another distinction is to be made:
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIzNTM4MjAxNF19
+eyJoaXN0b3J5IjpbLTE3OTg4ODQ0MDksLTIzNTM4MjAxNF19
 -->
