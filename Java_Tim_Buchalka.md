@@ -87,7 +87,7 @@ int number = Integer.parseInt(input);
 We can add if-else for validation
 Also methid scanner.hasNextInt() is a boolean that checks whether it's an integer
 
-```
+```java
 boolean hasNextInt = scanner.hasNextInt();
 
 if(hasNextInt) {
@@ -115,7 +115,7 @@ A class could be seen as a powerful user-defined data-type (not exactly, but to 
 
 To create a class:
 
-```
+```java
 public class ClassName {
     // attributes + methods
 }
@@ -1499,5 +1499,5 @@ Another distinction is to be made:
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTg4ODQ0MDksLTIzNTM4MjAxNF19
+eyJoaXN0b3J5IjpbLTEzNzc0NzQ2NzcsLTIzNTM4MjAxNF19
 -->
