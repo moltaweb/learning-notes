@@ -57,3 +57,6 @@ Also, there is a lighter version called Slim, without AJAX and all the animation
 ### Use classes
 
 ### Modify the DOM
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTQ2Nzk3NDg3N119
+-->
