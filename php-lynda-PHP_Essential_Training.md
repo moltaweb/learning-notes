@@ -9,7 +9,7 @@ PHP code goes bewteen opening and closing tags
 
 `<?php phpinfo(); ?>`
 
-There are other forms/shortcuts, but they are generally abad idea
+There are other forms/shortcuts, but they are generally a bad idea
 
 This one is the most standard and portable  
 
@@ -20,6 +20,7 @@ Basic syntax:
 -   whitespaces don't matter
 -   statements end with ";"
 -   files MUST end with .php, otherwise Apache interpreter will not process them  
+
 
 ### Output dynamic text
 
@@ -34,6 +35,7 @@ The period "." allows to concatenate strings
 `<?php echo 2+3; ?>`
 
 outputs 5
+
  
 ### The operational trail
 
@@ -124,16 +126,16 @@ Integers are whole numbers
 Operators
 | Function | Description | 
 | --- | --- | 
-| + | 
-| - | 
-| * | 
-| / | 
-| += | 
-| -= | 
-| *= | 
-| /= | 
+| + |   
+| - |   
+| * |   
+| / |   
+| += |   
+| -= |  
+| *= |   
+| /= |   
 | ++ | $var++;
-| -- | 
+| -- |   
 
 Operator precedence is as usual
 
@@ -141,9 +143,9 @@ Some functions
 
 | Function | Description | 
 | --- | --- | 
-| abs | 
+| abs |   
 | pow | exponential
-| sqrt | 
+| sqrt |   
 | fmod(20, 7) | Modulo, returns 6
 | rand() | Returns random number
 | rand(1, 10) | Returns randome number within range
@@ -154,10 +156,11 @@ Some functions
 > `<?php echo 1 + "2"; ?>`
 > returns 3
   
+
 ### Numbers, part 2: Floating points
 
-Floating point numbers (aka floats) are decimal numbers
-Programming languages treat integers ans floats differently because they are stored in different ways in memory, beause of decimals management
+Floating point numbers (aka floats) are decimal numbers  
+Programming languages treat integers and floats differently because they are stored in different ways in memory, because of decimals management
 
 | Function | Description | 
 | --- | --- | 
@@ -168,13 +171,16 @@ Programming languages treat integers ans floats differently because they are sto
 | is_numeric( nb ) | Returns boolean
 
 We can add floats and integers
+
 > Division by 0 returns a PHP warning
 
 
 ### Arrays
 
 An array is an ordered, integer-indexed, collection of objects
+
 To declare an array:
+
 ```php
 $numbers = array();
 $numbers = array(5, 6, 7, 8, 9);
@@ -186,7 +192,9 @@ $mixed = array(6, "fox", "dog", array("x", "y", "z"));
 echo $mixed[2]; // returns "dog"
 echo $mixed[3]; // returns an error
 ```
+
 We should use print_r(); to display an array contents
+
 ```php
 echo print_r( $mixed );
 echo $mixed[3][1]; // returns "y"
@@ -195,12 +203,13 @@ echo $mixed[3][1]; // returns "y"
 $mixed[2] = "cat";
 $mixed[] = "last"; // appends at the end of the array
 ```
+
 Arrays are ordered, so they're wonderful to store information
 
 
 ### Associative arrays
 
-An array is an object-indexed, collection of objects
+An associative array is an unordered object-indexed, collection of objects
 
 They differ from regular arrays in that:
 * They are unordered
@@ -214,23 +223,37 @@ echo $assoc["first_name"]; // returns "Kevin"
 // Assign values
 $assoc["first_name"] = "New name";
 ```
+
 Actually, keys can be anything, not necessarily Strings, but also integers
+
 Therefore
+
 ```php
 $numbers = array(5, 6, 7, 8, 9);
 ```
+
 is equivalent to
+
 ```php
 $assoc = array(0 => 5, 1 => 6, 2 => 7, 3 => 8, 4 => 9);
 ```
 
+Equivalent notation:
+
+```php
+$assoc = [0 => 5, 1 => 6, 2 => 7, 3 => 8, 4 => 9];
+```
+
+
 ### Array functions
 
 There are a lot of functions to work with arrays
+
 Some common functions:
+
 | Function | Description | 
 | --- | --- | 
-| ( $array ) | 
+| ( $array ) |   
 | count( $array ) | count items in the array
 | max( $array ) | Max value
 | min( $array ) | Min value
@@ -239,8 +262,8 @@ Some common functions:
 | implode( $char, $array ) | Construct a string from an array, separating items with $char
 | explode( $char, $array ) | Construct an array from a string, separating items with $char
 | in_array( $var, $array ) | Boolean, returns if $array contains $var
-| array_keys( $array ) |
-| array_values( $array ) |
+| array_keys( $array ) |. 
+| array_values( $array ) | |
 | array_push |
 | array_pop |
 | array_shift |
@@ -256,6 +279,7 @@ More info: <http://php.net/manual/es/ref.array.php>
 A Boolean is a variable that contains either the value true or false
 
 The following are equivalent
+
 | Boolean | Values | 
 | --- | --- | 
 | TRUE | True, true, 1
@@ -277,7 +301,7 @@ We can check if a value is null with the `is_null( $var )` function, which retur
 
 Alternatively, the function `isset( $var )` checks if a variable is defined
 
-Finally, the function `empy( $var )` checks if a variable is empty. PHP considers "empty" the follwoing:
+Finally, the function `empty( $var )` checks if a variable is empty. PHP considers "empty" the follwoing:
 - " "
 - null
 - 0
@@ -287,6 +311,7 @@ Finally, the function `empy( $var )` checks if a variable is empty. PHP consider
 - array() (empty array)
 
 This catch-all approach can be very useful, but we have to be careful to handle it. empty() function leads typically to many bugs in PHP
+
 
 ### Type Juggling and Casting
 
@@ -298,8 +323,11 @@ Juggling depends on the operators, for example:
 * integer . string -> string
 
 Type Casting is when we convert types manually:
+
 `settype( $var, "integer"); // this changes the type of $var permanently`
+
 or
+
 `(integer) $var; // this modifies the type temporarily, only for the statement`
 
 Types:
@@ -333,18 +361,21 @@ Notes:
 The scope of constants and variables is the execution of the PHP script. When HTML is returned to the brower, the values are reset.
 
 
+____________
+
 ## CONTROL STRUCTURES: LOGICAL EXPRESSIONS
 
 
 ### IF statements
 
-They allow us to execute a pieceofcode basedon a certain condition
+They allow us to execute a piece of code basedon a certain condition
 
 ```php
 if (expression) {
 	// code
 }
 ```
+
 
 ### ELSE and ELSEIF statements
 
@@ -359,6 +390,7 @@ if (expression) {
 	// final code
 }
 ```
+
 We can add as many "elseif" blocks as we want
 
 
@@ -378,11 +410,13 @@ Operator | Description
  \|\| | Or
  ! | Not
 
+
 ### Switch statements
 
 Similar to IF-ELSEIF-ELSE statements
 
 Syntax:
+
 ```php
 switch (value) {
 	case test_value1:
@@ -396,14 +430,19 @@ switch (value) {
 		statement;
 }
 ```
-Each case compares for value equality
-If we dont set `break;`, every case will be executed, because every line below the matched case is executed. 
 
+Each case compares for value equality
+If we dont set `break`, every case will be executed, because every line below the matched case is executed. 
+
+
+
+____________
 
 ## CONTROL STRUCTURES: LOOPS
 
-Loops are structures that allow us to execute the same block of code repeatedly
-In all loops we need an end condition to avoit infinite loops
+Loops are structures that allow us to execute the same block of code repeatedly.   
+In all loops we need an end condition to avoid infinite loops
+
 
 ### WHILE loops
 
@@ -422,9 +461,11 @@ for (expr1; expr2; expr3) {
 	// we need an end condition to avoid inifinite loop
 }
 ```
+
 `expr1` is the initial condition
 `expr2` is the condition test
 `expr3` is is executed on each iteration
+
 Example: `for (i=0; i<10; i++)`
 
 
@@ -438,11 +479,15 @@ foreach ($array as $value) {
 	// we need an end condition to avoid inifinite loop
 }
 ```
+
 `$value` is just an ad-hoc variable that refers to the array element being accessed on every iteration
+
 Here we don't need incremental counters and testing iteration conditions, since the `foreach` loop automatically iterates through the elements of the array
-We could of course use while of for loops instead, butforeach is much more direct and simple for arrays.
+
+We could of course use while of for loops instead, but foreach is much more direct and simple for arrays.
 
 For associative arrays:
+
 ```php
 foreach ($array as $key => $value) {
 	statement;
@@ -450,13 +495,15 @@ foreach ($array as $key => $value) {
 }
 ```
 
+
 ### Continue
 
 `continue` is used inside a loop to skip the rest of the current iteration and jump to the condition evaluation that starts the next iteration
 
-> Example of application: let's imagine that we have a database of college students,  and our code is going to loop though them  and send them all an email.  But if the student is already signed up  for a biology course this semester, then we aren't going to send them the email.
+> Example of application: let's imagine that we have a database of college students,  and our code is going to loop though them  and send them all an email.  But if the student is already signed up for a biology course this semester, then we aren't going to send them the email.
 
 In the case of nested loops with `continue`, we can specify to which parent loop we want to jump over: `continue(n)` jumps to the next iteration of the n-th parent loop, while `continue` would be equivalent to `continue(1)`.
+
 
 ### Break
 
@@ -469,59 +516,69 @@ Like for `continue`, in the case of nested loops with `break`, we can specify to
 
 ### Understanding array pointers
 
-When looping through an array, PHP uses a pointer that points tothe current item being evaluated. 
+When looping through an array, PHP uses a pointer that points to the current item being evaluated. 
 
 We too can move that pointer and use it to access the elements of the array. By default, the pointer points at the first element.
-`current($array)` returns the value of the item where the pointer is
-`next($array)` moves the pointer to the following item
-`prev($array)` moves the pointer to the previous item
-`reset($array)` moves the pointer to the first item
-`end($array)` moves the pointer to the last item
+`current($array)` returns the value of the item where the pointer is.  
+`next($array)` moves the pointer to the following item.  
+`prev($array)` moves the pointer to the previous item.  
+`reset($array)` moves the pointer to the first item.  
+`end($array)` moves the pointer to the last item.  
 
 This is similar to how `foreach` works. For example:
+
 ```php
 $ages = [12, 13, 16, 18, 21, 25, 28, 30];
-// we directly assign each time the current value of $ages. If it doetsn't exist, 
-// it will be null and $age will be False, exiting the loop
+// we directly assign each time the current value of $ages. If it doesn't exist, 
+// it will be null and $age will be False, exiting the loop.  
 while ($age = current($ages)) { 
 	echo $age . ", ";
 	next($ages);
 }
 ```
+
 We introduce this concept because when we work with databases, we have to do it like this, because database pointers do not allow to do a `foreach`.
 
+
+
+_____________
 
 ## USER-DEFINED FUNCTIONS
 
 
 ### Define functions
 
-A function is a piece of code that performs a specific task,packaged into a single unit, that can be called anytime we need to execute that code.
+A function is a piece of code that performs a specific task, packaged into a single unit, that can be called anytime we need to execute that code.
+
 We can use PHP's built-in functions, but we can also create our own.
 
 The syntax is:
+
 ```php
 function name($arg1, $arg2, ...) {
 	// code
 }
 ```
+
 Afterwards, we call the function with `name($arg1, $arg2, ...)`
 
-> Until PHP 3, we had to define our functions before being able to call them. From PHP 4, we can define it after calling it, because PHP pre-processes the entire .php file in search of functions. Still, it's a good practice to define it before, just for readability.
+> Until PHP 3, we had to define our functions before being able to call them. From PHP 4, we can define it after calling it, because PHP pre-processes the entire `.php` file in search of functions. Still, it's a good practice to define it before, just for readability.
 
 We cannot declare the same function twice, we will get an error.
 
 
 ### Function arguments
 
-When declaring a function with multiple arguments, order matters!
+When declaring a function with multiple arguments, order matters!   
 We may pass `null` as an argument, but there must be as many arguments as there are parameters.
+
 
 ### Return values from a function
 
 Functions may return a value or not (void).
 
-When returning a value, we can catch that value in a vartiable and work with it.  We use the `return` keyword. Example:
+When returning a value, we can catch that value in a variable and work with it.  We use the `return` keyword. Example:
+
 ```php
 function add($val1, $val2) {
 	$sum = $val1 + $val2;
@@ -529,15 +586,15 @@ function add($val1, $val2) {
 }
 echo add(2,3);
 ```
+
 It is considered a best practice to always return values from functions in PHP. If there is no explicit return, PHP will return `null` by default.
 
 > `return` automatically exits the function
 
 
-
 ### Multiple return values
 
-`return` can only return a single value
+`return` can only return a single value.   
 If we want to return multiple values, we have to do it in an array, using the `list()` function.
 
 ```php
@@ -547,6 +604,7 @@ function add_subt($val1, $val2) {
 	return array($add, $subt);
 }
 ```
+
 Normally we could retrieve the values with
 `$result_array = add_subt(10, 5);`
 and we would access the sum with `$result_array[0]` and the substraction with `$result_array[1]`
@@ -558,13 +616,16 @@ and we would access the sum with `$add_result` and the substraction with `$sub_r
 
 ### Scope and global variables
 
-A declared variable isn't accessible everywhere, only within a certain context: its scope.
+A declared variable isn't accessible everywhere, only within a certain context: its scope. 
+  
 In PHP there are 2 scopes:
 * *global* scope
 * *local* scope
 
 Variables inside functions are local to the function. To access a global variable inside a function we use the keyword `global`
+
 But in most cases, rather than declaring *global* inside a function, we will pass the variales as an argument and return its value.
+
 
 ### Set default argument values
 
@@ -585,6 +646,7 @@ echo paint("bedroom", null);
 echo paint("first");
 // returns "The color of the first is red."
 ```
+
 As seen in the last example: the order matters. Therefore, we should put optional (default) arguments at the end in the declaration.
 
 
@@ -659,13 +721,3 @@ PHP does not have an official debugging tool. Popular 3rd party options:
 * Xdebug (<http://xdebug.org>)
 * DBG (<http://www.php-debugger.com/dbg/>)
 * FirePHP (<http://www.firephp.org>)
-
-
-
-
-
-
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMDc3MDIwMjhdfQ==
--->
