@@ -1,48 +1,26 @@
 # Java / Tim Buchalka
 
   
-
 QUESTIONS
-
-  
-
 * Hello, I (think I) understand the concept of encapsulation and its benefits, but I'm a bit confused about the assertion Tim makes in the video, about the benefits of using getter/setter ratherthan accessing the variable directly.
 
-we also need to change the name of the getter/setter
-
+we also need to change the name of the getter/setter  
 we can access the variable anyway
-
   
-
 I mean in the end it's a matter of knowing what you're doing isnt'it?
-
-  
-
 * https://www.udemy.com/java-the-complete-java-developer-Course/learn/v4/questions/2331574
-
 * https://www.udemy.com/java-the-complete-java-developer-course/learn/v4/questions/2224658
 
-  
-
 Monopoly:
-
 * Tablero deberia ser un ArrayList de generico Casilla, pero habria que probar a hacerlo con y sin generico (video 115)
 
-  
-  
 
 ## TOC - Table of Contents
 
-  
-
 [1) Course Introduction](#1-course-introduction)
-
 [2) Setup and First Steps](#2-Setup-and-First-Steps)
-
 [3) Variables, Datatypes and Operators](#3-Variables-Datatypes-and-Operators)
-
 [4) Java Tutorial: Expressions, Statements, Code Blocks, Methods and More](#4-Java-Tutorial-Expressions-Statements-Code-Blocks-Methods-and-More)
-
 [5) Control Flow Statements](#5-Control-Flow-Statements)
 
 [6) OOP 1: Classes, Constructors and Inheritance](#6-OOP-1-Classes,-Constructors-and-Inheritance)
@@ -2293,5 +2271,5 @@ _________________
 
 [Back to top](#toc---table-of-contents)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE1NDAyMDYxOV19
+eyJoaXN0b3J5IjpbLTEwMjA2NTkxNjksMTE1NDAyMDYxOV19
 -->
