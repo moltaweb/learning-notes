@@ -250,54 +250,31 @@ Then the rest of conscuctors will call this one with `this(a, b, c, d, e)`, even
 
 For example: `this("0000", 0.0, c, d, e)` will default a and b
 
-  
-  
-
 In the constructor, we have 2 options to initialize variables:
 
-  
-
-this.variable = variable;
-
-or
-
-setVariable(variable);
-
-  
+`this.variable = variable;`  
+or  
+`setVariable(variable);`
 
 There are opinions for both. Tim prefers option1, general rule of thumb do not call other methods inside the constructor (except to call another constructor overload)
 
-Because there migh tbe scenarios where the setter is not executed (we will see that)
+Because there might tbe scenarios where the setter is not executed (we will see that)
 
-  
-  
 
 ### Inheritance
 
-  
-
-use keyword "extends"
-
-  
+use keyword `extends`
 
 A subclass inherits all data and methods from its super class
 
-It can also override the methods from the super class: annotation @Override
-
-  
+It can also override the methods from the super class: annotation `@Override`
 
 To access methods and data from the superclass we use super.method() or super.data
 
-  
-  
-  
 
-### Reference vs Object vs Instance vs Class
-
-  
+### Reference vs Object vs Instance vs Class  
 
 Very good video, explains clearly references to objects
-
   
   
 
@@ -2108,5 +2085,6 @@ _________________
 
 [Back to top](#toc---table-of-contents)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2MTMyOTg4NSwtMTQwMDc1MzA3OV19
+eyJoaXN0b3J5IjpbLTE1NzQ1MjEyNDksLTg2MTMyOTg4NSwtMT
+QwMDc1MzA3OV19
 -->
