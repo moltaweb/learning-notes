@@ -310,46 +310,25 @@ A constructor can call super() or this(), but not both
 
 ### Method overloading vs. overriding
 
-  
-
 Overloading:
-
-  
-
 * methods must have the same name
-
 * methods must have different parameters
-
 * May or may not
-
 * have different return types
-
 * have different access modifiers
-
 * throws different exceptions
-
 * Generally within same class (not necessarily)
 
-  
-
 Overriding:
-
 * define a method in a child class that already exists in the parent class with the same signature (name and arguments)
-
 * also known as Runtime Polymorphism
-
 * Recommentadion to use annotation @OVerride
-
 * Cannot override final, static, private and constructor methods, only instance methods
 
-  
-  
 
 ### static vs instance
 
-  
-
-Static methods do not require an instance to be called (exple: System,out.println)
+Static methods do not require an instance to be called (exple: `System,out.println()`)
 
 Instance methods require an instance created through the "new" keyword
 
@@ -2057,6 +2036,6 @@ _________________
 
 [Back to top](#toc---table-of-contents)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczNjYzNjU3MSwtODYxMzI5ODg1LC0xND
-AwNzUzMDc5XX0=
+eyJoaXN0b3J5IjpbLTE4NzMzNDk5MzIsLTg2MTMyOTg4NSwtMT
+QwMDc1MzA3OV19
 -->
