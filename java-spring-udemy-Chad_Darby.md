@@ -1081,5 +1081,5 @@ update the confirmation page:
 `The student is confirmed: ${student.firstName} ${student.lastName}`
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjk5NDYzNTY4XX0=
+eyJoaXN0b3J5IjpbODY3ODAwODU2LDI5OTQ2MzU2OF19
 -->
