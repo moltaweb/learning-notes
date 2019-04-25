@@ -1,4 +1,3 @@
-
 # Java / Tim Buchalka
 
   
@@ -85,34 +84,26 @@ Monopoly:
 
 ________________________
 
-## Section 1 -  
+  
 
 ## 1) Course Introduction
 
   
 
 ```java
-
 switch(variable) {
-     
-     
-case value1:
-          // code 1
-          
-// code 1
+    case value1:
+        // code 1
+        break;
 
-break;
-     
 case value2:  case value3:
-          // code 2
-          
+
 // code 2
 
 break;
-     
+
 case value4:
-          // code 1
-          
+
 // code 1
 
 break;
@@ -126,9 +117,9 @@ break;
 // for loop
 
 for(int i =  0; i<10; i++) {
-     
+
 // code
-}
+
 }
 
   
@@ -136,11 +127,11 @@ for(int i =  0; i<10; i++) {
 // while loop
 
 while(condition) {
-     
+
 // code
-     
+
 // condition revision to avoid infinite loop
-}
+
 }
 
   
@@ -148,12 +139,12 @@ while(condition) {
 // do-while loop
 
 do {
-     
+
 // code
-     
+
 // condition revision to avoid infinite loop
 
-} while(condition) 
+} while(condition)
 
 ```
 
@@ -161,13 +152,13 @@ do {
 
 ### Parsing values from a String
 
-`  
+  
 
 ```java
 
-int number = Integer.parseInt(string);`
+int number = Integer.parseInt(string);
 
-`double number = Double.parseDouble(string);`
+double number = Double.parseDouble(string);
 
 ```
 
@@ -175,8 +166,7 @@ int number = Integer.parseInt(string);`
 
 (string must be a string that can be converted,for example 2018a does not work)
 
-
-### READING USER INPUT  
+  
   
 
 ### Reading user input
@@ -206,10 +196,8 @@ input numbers:
 ```java
 
 // Option 1)
-
-intinput = scanner.nextInt();
-
-scanner.nextLine();          // we need this to allow to scan the Enter agter typing the int
+int input = scanner.nextInt();
+scanner.nextLine(); // we need this to allow to scan the Enter agter typing the int
 
   
 
@@ -241,12 +229,12 @@ boolean hasNextInt = scanner.hasNextInt();
   
 
 if(hasNextInt) {
-     
+
 int input = scanner.nextIne();
-     
+
 scanner.nextLine();
 
-     
+  
 
 // etc.
 
@@ -256,10 +244,7 @@ scanner.nextLine();
 
 ```
 
-_____________________________
-
-
-## Section 6 - OOP  
+  
 
 [Back to top](#toc---table-of-contents)
 
@@ -366,7 +351,7 @@ To create a class:
 ```java
 
 public  class ClassName {
-    
+
 // attributes + methods
 
 }
@@ -381,7 +366,7 @@ This creates automatically a file `ClassName.java`
 
 To instantiate:
 
-```  
+  
 
 ```java
 
@@ -393,9 +378,7 @@ ClassName myObject =  new ClassName();
 
 As a general rules, in our user-defined classes, we will define internal variables as "private" (encapsulation)
 
-We access these through getters/setters methods -> this is for encapsulation best practice
- Why? because this is more powerful, we can assdd validation, etc.
-
+We access these through getters/setters methods -> this is for encapsulation best practice Why? because this is more powerful, we can add validation, etc.
 
   
   
@@ -404,7 +387,7 @@ We access these through getters/setters methods -> this is for encapsulation bes
 
   
 
-Constructors are special methods defined in the class. They are called when instantiagting an object (like __init__() in Python)
+Constructors are special methods defined in the class. They are called when instantiating an object (like __init__() in Python)
 
   
 
@@ -424,16 +407,16 @@ BankAccount acc1 =  new BankAccount("12345", 0.0, "Bob Smith", "bob@email.com", 
 
   
 
-Even more, we can call one constructor forom another constructor. For example, when we call the empty constructor, this could call the overloaded constructor with some default parameters. Example inside the constructor definition:
+Even more, we can call one constructor from another constructor. For example, when we call the empty constructor, this could call the overloaded constructor with some default parameters. Example inside the constructor definition:
 
   
 
 ```java
 
 public BankAccount() {
-    
+
 this("00000", 0.0, "Empty name", "no-email", "no-phone");
-}
+
 }
 
 ```
@@ -471,7 +454,6 @@ There are opinions for both. Tim prefers option1, general rule of thumb do not c
 
 Because there migh tbe scenarios where the setter is not executed (we will see that)
 
-
   
   
 
@@ -490,8 +472,6 @@ It can also override the methods from the super class: annotation @Override
   
 
 To access methods and data from the superclass we use super.method() or super.data
-
-
 
   
   
@@ -530,7 +510,6 @@ We can copy the reference as many times as we want, but there is only 1 house bu
 
 In Java we always have references to Objects in memory, we never access the object directly, only through the reference
 
-
   
   
 
@@ -562,7 +541,6 @@ The Java Compiler puts a default call to super() if we don't add it
 
 A constructor can call super() or this(), but not both
 
-
   
   
 
@@ -572,47 +550,33 @@ A constructor can call super() or this(), but not both
 
 Overloading:
 
-	* 
   
 
 * methods must have the same name
 
-	* 
-methods must have different parameters
+* methods must have different parameters
 
-	* 
-May or may not
+* May or may not
 
-	* 
-have different return types
+* have different return types
 
-	* 
-have different access modifiers
+* have different access modifiers
 
-	* 
-throws different exceptions
+* throws different exceptions
 
-	* 
-Generally within same class (not necessarily)
+* Generally within same class (not necessarily)
 
   
 
 Overriding:
 
-	* 
-define a method in a child class that already exists in the parent class with the same signature (name and arguments) 
+* define a method in a child class that already exists in the parent class with the same signature (name and arguments)
 
-	* 
-also known as Runtime Polymorphism
+* also known as Runtime Polymorphism
 
-	* 
-Recommentadion to use annotation @OVerride
+* Recommentadion to use annotation @OVerride
 
-	* 
-Cannot override final, static, private and constructor methods, only instance methods
-
-
-
+* Cannot override final, static, private and constructor methods, only instance methods
 
   
   
@@ -633,8 +597,7 @@ static variables are shared among all the instances of a class. When we modify a
 
 instance variables belong to the instance, each instance has its own copy of the variable
 
-
-## Section 7 -  
+  
   
 
 [Back to top](#toc---table-of-contents)
@@ -664,7 +627,6 @@ This also allows ro concatenate method calls. Exple:
 
 thePC.getMonitor().drawPixelAt(1500, 1200, "red");
 
-
   
   
 
@@ -680,19 +642,13 @@ The goal is not security, but to limit the functioning of classes to affect othe
 
   
 
-We try and prevent possible issues: 
+We try and prevent possible issues:
 
-	* 
-accessing private data that we might not want to expose
+* accessing private data that we might not want to expose
 
-	* 
-if we change the name of a variable in our class, if public, we must go and change it everywhere
+* if we change the name of a variable in our class, if public, we must go and change it everywhere
 
-	* 
-assist data validation, through constructors and getters/setters
-
-
-
+* assist data validation, through constructors and getters/setters
 
   
   
@@ -702,10 +658,6 @@ assist data validation, through constructors and getters/setters
   
 
 Polymorphism is the mechanism in OOP that allows actions to act differently based on the actual object that the action is begin performed on
-
-
-
-ARRAYS, JAVA INBUILT LISTS, AUTOBOXING AND UNBOXING
 
   
   
@@ -738,7 +690,7 @@ Data structure allowing to store multiple values of the same type (primitive) in
 
 ```java
 
-int[] myArray = {0,1,2,3,4,5,6,7,8,9}     // array initiliazer block
+int[] myArray = {0,1,2,3,4,5,6,7,8,9} // array initiliazer block
 
 ```
 
@@ -751,14 +703,14 @@ int[] myArray = {0,1,2,3,4,5,6,7,8,9}     // array initiliazer block
 
 ```java
 
-int[] myarray =  new  int[10];    // create array and initialize elements to its default value (0 for int, null for String, etc.)
+int[] myarray =  new  int[10]; // create array and initialize elements to its default value (0 for int, null for String, etc.)
 
 myArray[0] =  0;
 
 myArray[1] =  1;
 
 for(int i=0; i<10; i++) {
-     
+
 myArray[i] = i;
 
 }
@@ -767,9 +719,6 @@ myArray[i] = i;
 
   
   
-}
-
-
 
 ### Reference Types vs Value Types
 
@@ -792,8 +741,6 @@ A reference works differently, it holds a reference to an object, but not the ob
 If we create a copy of the variable and modify the object, the original is also modified
 
 As a rule of thumb, only the "new" keyword creates an object. The rest are only references to the original object
-
-
 
   
   
@@ -826,36 +773,27 @@ Between <> we put the type of contents in the list (it can hold objects). The fi
 
   
 
-To add elements
-: `groceryList.add(item);`
+To add elements: `groceryList.add(item);`
 
   
 
 Useful methods:
 
-	* 
-add(item) - append to the list
+* add(item) - append to the list
 
-	* 
-size() - equivalent to array.length
+* size() - equivalent to array.length
 
-	* 
-get(item) - read
+* get(item) - read
 
-	* 
-set(position, item) - append in a given position, also replaces existing item
+* set(position, item) - append in a given position, also replaces existing item
 
-	* 
-remove(position)
+* remove(position)
 
-	* 
-contains(item) - search element in the list, returns boolean
+* contains(item) - search element in the list, returns boolean
 
-	* 
-indexOf(item) - search element in the list, returns index position (-1 if not)
+* indexOf(item) - search element in the list, returns index position (-1 if not)
 
-	* 
-toArray(array) - convert list to array
+* toArray(array) - convert list to array
 
   
   
@@ -864,8 +802,7 @@ To duplicate an ArrayList, 2 similar options:
 
   
 
-	1. 
-create + add
+1. create + add
 
   
 
@@ -875,8 +812,6 @@ ArrayList<String> newArray =  new  ArrayList<String>();
 
 newArray.addAll(groceryList.getGroceryList());
 
-
-	1. 
 ```
 
   
@@ -896,136 +831,69 @@ ArrayList<String> newArray =  new  ArrayList<String>(groceryList.getGroceryList(
 
 Project implementation
 
-
-	1. 
   
 
 * create a class GroceryList
 
+1. declare a new ArrayList private within the class
 
+2. create methods for
 
-	1. 
-declare a new ArrayList private within the class
+2. add itemto the list -> .add()
 
-	2. 
-create methods for
+2. print all items in the list -> .get() (via .size())
 
+3. update an item in the list -> .set()
 
+4. delete an item from the list -> .remove()
 
-	12. 
-add itemto the list -> .add()
+5. find an item in the list -> .indexOf()
 
-	2. 
-print all items in the list -> .get() (via .size())
+* create a class Main
 
-	3. 
-update an item in the list -> .set()
+1. variables
 
-	4. 
-delete an item from the list -> .remove()
-
-	5. 
-find an item in the list -> .indexOf()
-
-
-
-	* 
-create a class Main
-
-
-
-	1. 
-variables
-
-
-
-	1. 
 * scanner
 
-	2. 
 * groceryList = new GroceryList();
 
-
-
-	* 
 2. methods
 
-
-
-	1. 
 * main
 
+1. display menu
 
+2. scanner int for choice
 
-	1. 
-display menu
+3. swicth case options menu
 
-	2. 
-scanner int for choice
+* printInstructions
 
-	3. 
-swicth case options menu
+* addItem
 
+1. scanner item
 
+2. call groceryList.addItem
 
-	* 
-printInstructions
+* modifyItem
 
-	* 
-addItem
+1. scanner position
 
+2. scanner new ite
 
+3. call groceryList.modifyItem
 
-	1. 
-scanner item
-
-	2. 
-call groceryList.addItem
-
-
-
-	* 
-modifyItem
-
-
-
-	1. 
-scanner position
-
-	2. 
-scanner new ite
-
-	3. 
-call groceryList.modifyItem
-
-
-
-	* 
 * removeItem
 
+1. scanner position
 
+2. call groceryList.removeItem
 
-	1. 
-scanner position
+* searchItem
 
-	2. 
-call groceryList.removeItem
+1. scanner item
 
-
-
-	* 
-searchItem
-
-
-
-	1. 
-scanner item
-
-	2. 
-call findItem
-
-
-
+2. call findItem
 
   
   
@@ -1037,19 +905,15 @@ call findItem
 
 We can use primitives as objects by using their wrapper classes:
 
-	* 
   
 
 * Integer
 
-	* 
-Double
+* Double
 
-	* 
-Float
+* Float
 
-	* 
-etc
+* etc
 
   
 
@@ -1077,12 +941,11 @@ Integer myIntValue =  new Integer(54);
 
 myIntValue = Integer.valueOf(54);
 
-And u  
+  
 
 // Unboxing:
 
 int myInt = myIntValue.intValue();
-
 
   
 
@@ -1091,7 +954,6 @@ int myInt = myIntValue.intValue();
 Integer myIntValue =  54;
 
 int myInt = myIntValue;
-
 
 ```
 
@@ -1106,10 +968,10 @@ Similar to an ArrayList, but better optimized in memory management for large rea
 
 Each item stores 2 things:
 
-	  
+  
 
 * the value of the item
-	
+
 * a link that points to the next item
 
   
@@ -1121,20 +983,16 @@ In an ArrayList, elementos are stored in memory subsequently, so each time we in
 
 Simply put:
 
-	  
+  
 
 * use ArrayList when we do not need to insert/remove a lot, but rater read/update (get/set)
-	
+
 * use LinkedList when we need to rearrange a lot (add/remove)
 
-
-
-
   
   
 
-> NOTE
-: another way to iterate through a list (equivalent to a for loop)
+> NOTE: another way to iterate through a list (equivalent to a for loop)
 
   
 
@@ -1143,15 +1001,10 @@ Simply put:
 Iterator<String> i = linkedList.iterator();
 
 while(i.hasNext()) {
-    
+
 System.out.println(i.next());
 
 }
-
-
-
-
-INNER AND ABSTRACT CLASSES & INTERFACES
 
 ```
 
@@ -1194,15 +1047,14 @@ How to define an interface:
 ```java
 
 public  interface ITelephone {
-     
-     
+
 public  void dial(int phoneNumber);
-     
+
 public  boolean isRinging;
-     
+
 public  void callPhone(int phoneNumber);
 
-}  
+  
 
 }
 
@@ -1224,15 +1076,11 @@ How to define a class that implements an interface:
 
 public  class MobilePhone implements ITelephone {
 
-     
+  
 
 @Override
-     
-public  void dial(int phoneNumber) {
-          // code
-     }
 
-}
+public  void dial(int phoneNumber) {
 
 // code
 
@@ -1271,7 +1119,6 @@ But we cannot instiate the interface directly:
 // This is not allowed
 
 ITelephone myPhone =  new ITelephone();
-Is not allowed
 
 ```
 
@@ -1280,11 +1127,10 @@ Is not allowed
 
 Notes
 
-	*  
+  
 
 > It's a good habit, for example when we work with lists, to declare our variables as the interface (ie, List) and then apply one type or another when we instantiate
-	* 
-		* 
+
   
 
 Example:
@@ -1303,25 +1149,19 @@ myList =  new  ArrayList<Object>;
 
 myList =  new  LinkedList<Object>;
 
-
-	*```
+```
 
   
 
-> Sometimes it can be difficult to decide wheter to create a Class as a subclass (inheritance) or as an implementation (interfaces). 
-	* 
-		* 
+> Sometimes it can be difficult to decide wheter to create a Class as a subclass (inheritance) or as an implementation (interfaces).
 
   
 
 Good rule can be if the new class "is-a" or "has-a". for example a MobilePhone could be a subclass of Phone. But a MobilePhone hasmore things besides phone capabilities(also computer, video, apps, etc.. DeskPhone is also a phone. So best approach is they both implement the IPhone interface
-		* 
+
   
 
 also remember Java only allows 1 single inheritance. So to "inherit" from multiple classes we have to use interfaces
-
-
-
 
   
   
@@ -1336,22 +1176,15 @@ In Java it's possible to nest classes inside other classes. We have to write the
 
 There are 4 types of inner classes:
 
-	* 
   
 
 * static nested (mainly used to associate a class with an outer class)
 
-	* 
-non-static nested (inner)
+* non-static nested (inner)
 
-	* 
-local (inner defined inside of a scope, a method)
+* local (inner defined inside of a scope, a method)
 
-	* 
-anonymous (nested without a class name)
-
-
-
+* anonymous (nested without a class name)
 
   
   
@@ -1380,8 +1213,6 @@ Gearbox.Gear first = mcLaren.new Gear(1, 12.3);
 
 TO BE CONTINUED
 
-
-
   
   
   
@@ -1396,36 +1227,25 @@ Classes that implement method signature only. They cannot be instantiated, only 
 
 If the subclass does not implement all the methods of the parent class, it must also be declared abstract
 
-
   
   
 
 **Abstract class vs. Interface**
 
-	* 
-Interfaces are 100% abstract, AC can have some abstract methods and some aren't + can have attrbitutes
+* Interfaces are 100% abstract, AC can have some abstract methods and some aren't + can have attrbitutes
 
-	* 
-What is the relationship between our classes. "Is a" (inheritance) vs "can" (interface) vs "has a" (interface)
+* What is the relationship between our classes. "Is a" (inheritance) vs "can" (interface) vs "has a" (interface)
 
-	* 
-AC can have member variables that can be inherited. Itfces can only have private static final variables (constants)
+* AC can have member variables that can be inherited. Itfces can only have private static final variables (constants)
 
-	* 
-AC can have a constructor
+* AC can have a constructor
 
-	* 
-Methods in Itfces are automatically public, whereas in AC they can have any visibility
-
-
-
+* Methods in Itfces are automatically public, whereas in AC they can have any visibility
 
   
   
 
 ### Interfaces
-
-
 
   
   
@@ -1471,7 +1291,6 @@ But not recommended at all. The problem is the compiler will not say anything if
 
 The goal is to try and spot errors in the code as early as possible in compile time
 
-
   
   
 
@@ -1504,9 +1323,9 @@ Let's see an example with Players and Teams
 // we define the class to accept any Type that extends Player
 
 public  class Team<T  extends  Player> {
-    
+
 // code
-    
+
 private  ArrayList<T> members =  new  ArrayList<>();
 
 }
@@ -1527,9 +1346,6 @@ Player can either be a class or an interface. Even multiple interfaces with '&':
 
 public  class Team<T  extends  Player & Coach & Manager> {
 
-
-
-
 ```
 
   
@@ -1543,93 +1359,66 @@ _______________
 
 ## 11) NAMING CONVENTIONS
 
-
   
   
 
 ### Naming conventions
 
-
-	*   
+  
 
 Packages
 
-	* 
-lower case
+* lower case
 
-	* 
-unique names
+* unique names
 
-	* 
-use internet domain name reversed
+* use internet domain name reversed
 
-	*   
+  
 
 Classes
 
-	* 
-CamelCase, start with capital letter
+* CamelCase, start with capital letter
 
-	* 
-should be nouns (they represent things)
+* should be nouns (they represent things)
 
-	* 
-
-
-	* 
 Interfaces
 
-	* 
-CamelCase
+* CamelCase
 
-	* 
-should represent what the class is intended to be/do (List, Serializable, Coumpound...)
+* should represent what the class is intended to be/do (List, Serializable, Coumpound...)
 
-	*   
+  
 
 Methods
 
-	* 
-mixedCase
+* mixedCase
 
-	* 
-often verbs
+* often verbs
 
-	* 
 Constants
 
-	* 
-UPPERCASE
+* UPPERCASE
 
-	* 
-separate words with underscore_
+* separate words with underscore_
 
-	*   
+  
 
 Variables
 
-	* 
-mixedCase
+* mixedCase
 
-	* 
-meaningful and indicative
+* meaningful and indicative
 
-	* 
-No underscores
+* No underscores
 
-	*   
+  
 
 Type parameters
 
-	* 
-single characters
+* single characters
 
-	* 
-capital letters
-
-
-
-
+* capital letters
 
   
   
@@ -1645,7 +1434,7 @@ Packages are a way of grouping related classes and interfaces together
 
   
 
-We can use a class in an external package either by importing or by calling the full path in the variable declaration. 
+We can use a class in an external package either by importing or by calling the full path in the variable declaration.
 
 But we can't import 2 classes named the same from different packages, only one. For the others we have to use the full path declaration.
 
@@ -1653,28 +1442,22 @@ But we can't import 2 classes named the same from different packages, only one. 
 
 Reasons for packages
 
-	* 
-Related classes and interfaces together
+* Related classes and interfaces together
 
-	* 
-Each package creates a new namespace
+* Each package creates a new namespace
 
-	* 
-Classes within a package have unrestricted access to one another while still restricting access for classes outside the package
+* Classes within a package have unrestricted access to one another while still restricting access for classes outside the package
 
   
   
 
-To import everything from a package:
- `import path.to.package.*`
+To import everything from a package: `import path.to.package.*`
 
   
 
-This imports all classes, interfaces and static objects, but not the subpackages. 
+This imports all classes, interfaces and static objects, but not the subpackages.
 
-Ie:
- `path.to.package.subpackage
-` Is another package.
+Ie: `path.to.package.subpackage` Is another package.
 
   
 
@@ -1682,9 +1465,7 @@ Also, the package name must match de directory path.
 
   
 
-To import a class:
- `import path.to.package.Class`
-
+To import a class: `import path.to.package.Class`
 
   
   
@@ -1705,7 +1486,6 @@ For example 2 variables named the same, one in the class the other in the method
 
 If we have inner classes, in order to distinguish between the myVar in innter class vs the one in the class si this.myVar is for innerclass and Class.this.myVar is for the one in the class
 
-
   
   
 
@@ -1719,7 +1499,6 @@ It is determined by the access modifiers
 
 Between a class and its inner classes, everything is visible, even if marked as private
 
-
   
   
 
@@ -1727,56 +1506,35 @@ Between a class and its inner classes, everything is visible, even if marked as 
 
   
 
-	* 
-public: visible everywhere
+* public: visible everywhere
 
-	* 
-private: only visible within the class, not even in subclasses
+* private: only visible within the class, not even in subclasses
 
-	* 
-protected: visible only in the package, but also in sub-classes (even if they are in another package)
+* protected: visible only in the package, but also in sub-classes (even if they are in another package)
 
-	* 
-package-private (no keyword): visible only in the package (special case: in interfaces, all methods are public no matter the access modifier we put them. But of course, if the interface itself is not public, nothing will be visible outside the package)
-
+* package-private (no keyword): visible only in the package (special case: in interfaces, all methods are public no matter the access modifier we put them. But of course, if the interface itself is not public, nothing will be visible outside the package)
 
   
 
-	* 
-Top level: only classes, enums and interfaces. Everything else must be included in one of these
+* Top level: only classes, enums and interfaces. Everything else must be included in one of these
 
+* public
 
+* package-private
 
-	* 
-public
+* Member level:
 
-	* 
-package-private
+* public
 
+* package-private
 
-
-	* 
-Member level: 
-
-
-
-	* 
-public
-
-	* 
-package-private
-
-	* 
-private
-
-
-
+* private
 
   
   
   
 
-### The '*static'* statement
+### The *static* statement
 
   
 
@@ -1792,12 +1550,10 @@ For example: a global counter of instances
 
 > Important: a non-static property/method cannot be accessed from a static context.
 
-
-
   
   
 
-### The '*final'* keyword
+### The *final* keyword
 
   
 
@@ -1817,8 +1573,6 @@ When used in a class declaration, 'final' prevents the classed from being extend
 
 public final class Math {}
 
-
-
   
   
 
@@ -1830,14 +1584,11 @@ This is an advanced feature, rarely used. It's a means to create a constructor b
 
   
 
-They go inside a static code block:
- `static {}`
+They go inside a static code block: `static {}`
 
   
 
 There can be as many as we want. They are executed in order, first al lthe statics and then the rest of the code.
-
-
 
   
   
@@ -1855,15 +1606,6 @@ ________________
 
 ### Collections Overview
 
-
-
-
-Binary Search
-
-
-
-
-
   
   
   
@@ -1879,23 +1621,12 @@ Binary Search
 
 ### Collections List Methods
 
-
-
-
   
   
   
   
 
 ### Comparable and Comparator
-
-
-
-
-Maps
-
-
-
 
   
   
@@ -1911,18 +1642,12 @@ Maps
 
 ### Map Continued and Adventure Game
 
-
-
-
   
   
   
   
 
 ### Adding Exits to the Adventure Game
-
-
-
 
   
   
@@ -1931,29 +1656,12 @@ Maps
 
 ### Adventure Game Challenge
 
-
-
-
   
   
   
   
 
 ### Immutable Classes
-
-
-
-
-
-Sets & HashSet
-
-
-
-
-
-
-
-
 
   
   
@@ -1993,29 +1701,21 @@ Layouts allowto manage automatically how the elements are displayed, the resizin
 
 JavaFX has 8 built-in layouts:
 
-	1. 
-GridPane
+1. GridPane
 
-	2. 
-AnchorPane
+2. AnchorPane
 
-	3. 
-StackPane
+3. StackPane
 
-	4. 
-HBox
+4. HBox
 
-	5. 
-VBox
+5. VBox
 
-	6. 
-FlowPane
+6. FlowPane
 
-	7. 
-BorderPane
+7. BorderPane
 
-	8. 
-TilePane
+8. TilePane
 
   
 
@@ -2029,71 +1729,37 @@ But we can also create our custom layouts (advanced)
 
 Tags
 
-	* 
-padding
+* padding
 
+* InSets
 
+* columnConstraints
 
-	* 
-InSets
+* ColumnConstraints
 
+* Button
 
+* prefWidth
 
-	* 
-columnConstraints
+* Label
 
+* GridPane
 
+* Hox
 
-	* 
-ColumnConstraints
+* VBox
 
-
-
-	* 
-Button
-
-
-
-	* 
-prefWidth
-
-
-
-	* 
-Label
-
-	* 
-GridPane
-
-	* 
-HBHox
-
-	* 
-VBox
-
-	* 
 * BorderPane
 
+* top
 
+* bottom
 
-	* 
-top
+* left
 
-	* 
-bottom
+* right
 
-	* 
-left
-
-	* 
-right
-
-	* 
-center
-
-
-
-
+* center
 
   
   
@@ -2118,13 +1784,11 @@ GridPane.rowIndex="2" GridPane.columnIndex="0"
 
   
 
-Intersting feature for debugging, add this attribute in the GridPane element: 
-`gridLinesVisible="true"`
+Intersting feature for debugging, add this attribute in the GridPane element: `gridLinesVisible="true"`
 
   
 
 We can use a class `<columnConstraints>` to set the width of columns, in px (absolute) or % (relative to the size of the window)
-
 
   
   
@@ -2142,7 +1806,6 @@ Usually used in dialog windows or as a child of another layout
   
 
 VBox is the same, but vertically
-
 
   
   
@@ -2163,7 +1826,6 @@ It has 5 sections: top, left, center, right and bottom
 
 We don't need to use them all
 
-
   
 
 #### AnchorPane
@@ -2171,7 +1833,6 @@ We don't need to use them all
   
 
 Popular also, allows to anchor elements (for example: Title on the top)
-
 
   
 
@@ -2187,7 +1848,6 @@ Similar to HBox or VBox, we whould use those when we don't want the elements to 
 
 FlowPane is useful for example when we pop up items from DB and don't know how many beforehand
 
-
   
 
 #### TtilePane
@@ -2196,7 +1856,6 @@ FlowPane is useful for example when we pop up items from DB and don't know how m
 
 Very similar to FlowPane, except all cells have same size
 
-
   
 
 #### StackPane
@@ -2204,7 +1863,6 @@ Very similar to FlowPane, except all cells have same size
   
 
 Occupies a single cell, all elements are stacked on top of each other (like z-index)
-
 
   
   
@@ -2220,97 +1878,31 @@ https://docs.oracle.com/javase/8/javafx/user-interface-tutorial/ui_controls.htm
 
 https://www.oracle.com/technetwork/java/repository-140393.html
 
-
-	* 
   
   
 
 * Button - text
-
-
-
-	* 
-graphic
-
-
-
-	* 
-ImageView
-
-
-
-	* 
-Image - url
-
-
-
-	* 
-Label - text, textFill, WrapText
-
-
-
-	* 
-font
-
-
-
-	* 
-Font - name, size
-
-
-
-	* 
-graphic
-
-
-
-	* 
-RadioButton - selected
-
-	* 
-CheckBox
-
-	* 
-ToggleButton
-
-	* 
-TextField
-
-	* 
-PasswordField
-
-	* 
-ComboBox - editable
-
-	* 
-ChoiceBox (very similar to Combobox, normally not very used)
-
-	* 
-Slider - min, max, showTickLabels, showTickMarks, minorTickCount, snapToTicks
-
-	* 
-Spinner (available from Java 1.8u40) - min, max, editable, initialValue
-
-	* 
-ColorPicker
-
-	* 
-DatePicker
-
-	* 
-TitledPane (can be used standalone or within an Accordion)
-
-	* 
-Accordion
-
-
-
-	* 
-panes
-
-
-
-
+* graphic
+* ImageView
+* Image - url
+* Label - text, textFill, WrapText
+* font
+* Font - name, size
+* graphic
+* RadioButton - selected
+* CheckBox
+* ToggleButton
+* TextField
+* PasswordField
+* ComboBox - editable
+* ChoiceBox (very similar to Combobox, normally not very used)
+* Slider - min, max, showTickLabels, showTickMarks, minorTickCount, snapToTicks
+* Spinner (available from Java 1.8u40) - min, max, editable, initialValue
+* ColorPicker
+* DatePicker
+* TitledPane (can be used standalone or within an Accordion)
+* Accordion
+* panes
 
   
   
@@ -2327,13 +1919,11 @@ UI thread is waiting for user's interaction. Whenever the user does an action, t
 
   
 
-As programmers, we have to write the event handlers. 
+As programmers, we have to write the event handlers.
 
-	* 
-We write the methods in the Controller.java file 
+* We write the methods in the Controller.java file
 
-	* 
-we link actions in the FXML: onAction="#methodName"
+* we link actions in the FXML: onAction="#methodName"
 
   
 
@@ -2341,14 +1931,13 @@ On the other hand, we can also retrieve data frm the UI (for example a TextField
 
   
 
-Also, we can add parameters to the controller method. 
+Also, we can add parameters to the controller method.
 
 For example, 2 buttons can call the same method -> ActionEvent can help determine the source
 
   
 
 Finally, we can use the initialize() method to initialize the state of UI controls
-
 
   
   
@@ -2364,7 +1953,6 @@ Now the event handler itself also runs on the UI thread. So when an event handle
   
 
 We have to make sure when programming that when we're processing things in our event handlers, we go back to the UI thread as quick as possible, otherwise we'll have a bad user experience.
-
 
   
   
@@ -2383,26 +1971,19 @@ We can do that using the Runnable class and the Platform.runLater() method
 
 We will se more in the concurrency section
 
-
   
   
 
 ### Setup sample ToDo list application
-
-
 
   
   
 
 ### Add change listener
 
-
-	*   
+  
 
 Split the central part in to VBoxes: textarea and due date
-
-
-
 
   
   
@@ -2411,21 +1992,13 @@ Split the central part in to VBoxes: textarea and due date
 
   
 
-	* 
-singleton to store the data 
+* singleton to store the data
 
-	* 
-try-with-resources
+* try-with-resources
 
-	* 
-basic IO to a file
+* basic IO to a file
 
-	* 
-observableArrayList
-
-
-
-
+* observableArrayList
 
   
   
@@ -2447,10 +2020,10 @@ ______________
 
 There are 2 approaches for dealing with exceptions typically:
 
-	  
+  
 
 * LBYL - Look Before You Leap
-	
+
 * EAFP - Easy To Ask for Forgiveness and Permission
 
   
@@ -2464,11 +2037,11 @@ In Java the approach is more LBYL. Example: check an object is not null before w
 // Example LBYL:
 
 if (y !=  0) {
-    
+
 return x/y;
 
 } else {
-    
+
 return  0;
 
 }
@@ -2478,13 +2051,13 @@ return  0;
 // Example EAFP:
 
 try {
-    
+
 return x/y;
 
 } catch(ArithmeticException e) {
-    
+
 return  0;
-}
+
 }
 
 ```
@@ -2494,7 +2067,6 @@ return  0;
 There's a lot of debate in to which approach is better. Both are good and better than none.
 
 Depending on the scenario, LBYL can require much more code (example: input integer check not a string), but also can be quicker (check if a key exists in a map)
-
 
   
   
@@ -2525,7 +2097,6 @@ So when we get an exception, at the top we have the method that has thrown the e
 
 When an exception is thrown, the JRE goes through the call stack backwards (to the bottom of the stack) to see if any of the methods has been programmed to handle the exception, until it finds one that has. Only if there's not any, the program is interrupted and the JRE prints the stack trace.
 
-
   
   
 
@@ -2545,7 +2116,6 @@ A possibility is to throw a new exception inside the catch block, this way we ca
 
 throw new ArithmeticException("attempt to divide by 0");
 
-
   
   
 
@@ -2560,19 +2130,19 @@ We can concatenate several catches. If one is caught, then the exception is thro
 ```java
 
 try {
-    
+
 x = getInt();
-    
+
 y = getInt();
-    
+
 return x / y;
 
 } catch(NoSuchElementException e) {
-    
+
 throw  new ArithmeticException("no suitable input");
 
 } catch(ArithmeticException e) {
-    
+
 throw  new ArithmeticException("attempt to divide by 0");
 
 }
@@ -2588,17 +2158,17 @@ From Java 7 we can also combine catches:
 ```java
 
 try {
-    
+
 x = getInt();
-    
+
 y = getInt();
-    
+
 return x / y;
 
 } catch(NoSuchElementException | ArithmeticException e) {
-    
+
 throw  new ArithmeticException("unable to perform operation");
-}
+
 }
 
 ```
@@ -2606,7 +2176,6 @@ throw  new ArithmeticException("unable to perform operation");
   
 
 (NOTE it's a single pipe sign, not double)
-
 
   
   
@@ -2635,34 +2204,13 @@ I/O can be performed using either Byte or Character data. The methods used are p
 
 Another distinction is to be made:
 
-	  
+  
 
 * serial/sequential files : stream of data IN or OUT of our program, in order with a predefined sequence
-	
-* randome access files : refers to files, allows to jump within the file to access some specific data. This is to work for example with a database in file format
 
+* random access files : refers to files, allows to jump within the file to access some specific data. This is to work for example with a database in file format
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-> Written with [StackEdit](https://stackedit.io/).  
+  
   
   
 
@@ -2745,6 +2293,5 @@ _________________
 
 [Back to top](#toc---table-of-contents)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTcyNDQxMjUsLTEzNzc0NzQ2NzcsLT
-IzNTM4MjAxNF19
+eyJoaXN0b3J5IjpbMTE1NDAyMDYxOV19
 -->
