@@ -328,69 +328,42 @@ Overriding:
 
 ### static vs instance
 
-Static methods do not require an instance to be called (exple: `System,out.println()`)
+Static methods do not require an instance to be called (exple: `System.out.println()`)
 
-Instance methods require an instance created through the "new" keyword
-
-  
+Instance methods require an instance created through the `new` keyword
 
 static variables are shared among all the instances of a class. When we modify a static variable in one instance of a Class, its value is modified in all other instances
-
-  
 
 instance variables belong to the instance, each instance has its own copy of the variable
 
   
-  
-
 [Back to top](#toc---table-of-contents)
+
+
 
 _____________________
 
-  
-
 ## 7) OOP Part 2
-
-  
-  
 
 ### Composition
 
-  
-
 Composition defines a relationship. Example: a Computer has a Motherbord, a Monitor, a Case
-
-  
 
 Inheritance is an "is-a" relationship. Composition is a "has-a". You do composition by having an instance of another class C as a field of your class, instead of extending C
 
-  
+This also allows to concatenate method calls. Exple:
+`thePC.getMonitor().drawPixelAt(1500, 1200, "red");`
 
-This also allows ro concatenate method calls. Exple:
-
-thePC.getMonitor().drawPixelAt(1500, 1200, "red");
-
-  
-  
 
 ### Encapsulation
 
-  
-
 Encapsulation in Java is a mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit. In encapsulation, the variables of a class will be hidden from other classes, and can be accessed only through the methods of their current class. Therefore, it is also known as data hiding.
-
-  
 
 The goal is not security, but to limit the functioning of classes to affect other classes. Thus, classes act as black-boxes.
 
-  
-
 We try and prevent possible issues:
-
 * accessing private data that we might not want to expose
-
 * if we change the name of a variable in our class, if public, we must go and change it everywhere
-
 * assist data validation, through constructors and getters/setters
 
   
@@ -2036,6 +2009,6 @@ _________________
 
 [Back to top](#toc---table-of-contents)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NzMzNDk5MzIsLTg2MTMyOTg4NSwtMT
-QwMDc1MzA3OV19
+eyJoaXN0b3J5IjpbMTQzMTYyNzMzNCwtODYxMzI5ODg1LC0xND
+AwNzUzMDc5XX0=
 -->
