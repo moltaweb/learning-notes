@@ -56,84 +56,46 @@ switch(variable) {
 	case value4:
 		// code
 		break;
-
 }
-
 ```
-
 ```java
-
 // for loop
-
 for(int i =  0; i<10; i++) {
-
-// code
-
+	// code
 }
-
-  
 
 // while loop
-
 while(condition) {
-
-// code
-
-// condition revision to avoid infinite loop
-
+	// code
+	// condition revision to avoid infinite loop
 }
 
-  
-
 // do-while loop
-
 do {
-
-// code
-
-// condition revision to avoid infinite loop
-
+	// code
+	// condition revision to avoid infinite loop
 } while(condition)
-
 ```
 
   
-
 ### Parsing values from a String
 
-  
-
 ```java
-
 int number = Integer.parseInt(string);
-
 double number = Double.parseDouble(string);
-
 ```
 
-  
-
 (string must be a string that can be converted,for example 2018a does not work)
-
-  
   
 
 ### Reading user input
 
-  
-
 We use the built-in Scanner class (java.util)
 
-  
-
 ```java
-
 Scanner scanner =  new Scanner(System.in)
-
 String input = scanner.nextLine();
-
 scanner.close();
-
 ```
 
   
@@ -2242,5 +2204,6 @@ _________________
 
 [Back to top](#toc---table-of-contents)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NDUwMDk3MzEsMTE1NDAyMDYxOV19
+eyJoaXN0b3J5IjpbLTE0MDA3NTMwNzksLTE0NDUwMDk3MzEsMT
+E1NDAyMDYxOV19
 -->
