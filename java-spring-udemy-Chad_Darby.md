@@ -15,9 +15,11 @@ ____________________________
 
 Spring and Hibernate are very demanded skills for Java developers
 
+
 ### Practice Activities
 
 It is highly recommended to do all the practice activities and homework on our own. This is the best way to learn
+
 
 ### How to take this course
 
@@ -34,8 +36,7 @@ This only includes the source files, no JAR files. You will need to add JAR file
 
 **Download PDF Files**
 
-All slides which are shown during the course are available also as a reference and can be downloaded here:
-
+All slides which are shown during the course are available also as a reference and can be downloaded here:  
 [http://www.luv2code.com/download-spring-hibernate-pdfs](http://www.luv2code.com/download-spring-hibernate-pdfs)
 
 
@@ -220,16 +221,13 @@ This is the overall Spring process:
 8. Custom Destroy Method
 9. Stop
 
-
 In steps 5 and 8 we can define custom methods, typically we can use them to:
 * call some custom business logic methods
 * set up / clean up custom handles to resources (db, sockets, files, etc.)
 
-
 We call them with attributes in the `<bean>` tag:
 * init-method="myInitMethod"
 * destroy-method="myDestroyMethod"
-
 
 Steps:
 1. Define methods for init and destroy
@@ -385,10 +383,10 @@ private Fortune fortuneService;
 
 ```java
 @Autowired
-    public TennisCoach(@Qualifier("randomFortuneService") FortuneService theFortuneService) {
-        System.out.println(">> TennisCoach: inside constructor using @autowired and @qualifier");
+public TennisCoach(@Qualifier("randomFortuneService") FortuneService theFortuneService) {
+	System.out.println(">> TennisCoach: inside constructor using @autowired and @qualifier");
         fortuneService = theFortuneService;
-    }
+}
 ```
 
 
@@ -407,16 +405,15 @@ Steps
 3. Reference values from the Properties file
 
 ```java
-    @Value("${foo.email}")
-    private String email;
-        
-    @Value("${foo.team}")
-    private String team;
+@Value("${foo.email}")
+private String email;
+
+@Value("${foo.team}")
+private String team;
 ```
 
-We create a plain text file: myfile.properties
-and we type like in bash:
-*foo.email=myemail@mail.com*
+We create a plain text file: myfile.properties and we type like in bash:  
+*foo.email=myemail@mail.com*  
 *foo.team=My Sports Team*
 
 
@@ -654,27 +651,26 @@ Process
 
 ```java
 // new controller method to read form data and add data to the model
-    
-    @RequestMapping("/processFormVersionTwo")
-    public String letsShoutDude(HttpServletRequest request, Model model) {
-        
-        // read the request parameter from the HTML form
-        String theName = request.getParameter("studentName");
-        
-        // convert the data to all caps
-        theName = theName.toUpperCase();
-        
-        // create the message
-        String result = "Yo! " + theName;
-        
-        // add message to the model. "message" is the identifier used in the Jsp view through ${message}
-        model.addAttribute("message", result);
-        
-        return "helloworld";
-    }
+@RequestMapping("/processFormVersionTwo")
+public String letsShoutDude(HttpServletRequest request, Model model) {
+
+	// read the request parameter from the HTML form
+	String theName = request.getParameter("studentName");
+
+	// convert the data to all caps
+	theName = theName.toUpperCase();
+
+	// create the message
+	String result = "Yo! " + theName;
+
+	// add message to the model. "message" is the identifier used in the Jsp view through ${message}
+	model.addAttribute("message", result);
+
+	return "helloworld";
+}
 ```
 
-*HttpServletRequest* is used to read form data
+*HttpServletRequest* is used to read form data  
 Model is just a container for our data, it comes empty and then we can data to it. Data can be in any form: a string, but also any other Object, List, etc.
 
 
@@ -684,13 +680,11 @@ Any static resource is processed as a URL Mapping in Spring MVC. You can configu
 
 In my example, I'm going to have the following directory structure:
 
-![Spring Folder](images/spring_folder.png)
+![Spring Folder](img/spring_folder.png)
 
 I chose to put everything in the "resources" directory. But you can use any name for "resources", such as "assets", "foobar" etc. Also, you can give any name that you want for the subdirectories under "resources".
 
----
-
-Step 1: Add the following entry to your Spring MVC configuration file `spring-mvc-demo-servlet.xml`
+**Step 1:** Add the following entry to your Spring MVC configuration file `spring-mvc-demo-servlet.xml`
 
 You can place this entry anywhere in your Spring MVC config file.
 
@@ -698,7 +692,7 @@ You can place this entry anywhere in your Spring MVC config file.
 <mvc:resources mapping="/resources/**" location="/resources/"></mvc:resources>
 ```
 
-Step 2: Now in your view pages, you can access the static files using this syntax:
+**Step 2:** Now in your view pages, you can access the static files using this syntax:
 
 ```xml
 <img src="${pageContext.request.contextPath}/resources/images/spring-logo.png">
@@ -707,8 +701,6 @@ Step 2: Now in your view pages, you can access the static files using this synta
 You need to use the JSP expression `${pageContext.request.contextPath}` to access the correct root directory for your web application.
 
 Apply the same technique for reading CSS and JavaScript.
-
----
 
 Here's a full example that reads CSS, JavaScript and images.
 
@@ -749,8 +741,6 @@ The WAR file format is part of the Java EE / Servlet specification. As a result,
 
 Below, I provide steps on how to create a WAR file in Eclipse. I also show how to deploy the WAR file on Tomcat.
 
----
-
 1. In Eclipse, stop Tomcat
 2. Right-click your project and select Export > WAR File
 3. In the Destination field, enter: <any-directory>/mycoolapp.war
@@ -789,8 +779,8 @@ By doing directly:
 public String letsShoutDude(@RequestPAram("studentName") String theName, Model model) {
 
 /* NOT NECESSARY ANYMORE      
-    // read the request parameter from the HTML form
-    String theName = request.getParameter("studentName");
+// read the request parameter from the HTML form
+String theName = request.getParameter("studentName");
 */      
 ```
 
@@ -799,7 +789,7 @@ public String letsShoutDude(@RequestPAram("studentName") String theName, Model m
 
 By adding a @RequestMapping to the Controller, we do all the @RequestMapping of the methods, relative to the controler. It's like subfolders for slugs in the URL:
 
-![@RequestMapping](images/spring1.png)
+![@RequestMapping](img/spring1.png)
 
 
 
@@ -836,7 +826,7 @@ we can easily mix the form tags with regular HTML. We only need to add this dire
 
 This is the big picture:
 
-![FormOverview](images/spring2.png)
+![FormOverview](img/spring2.png)
 
 1. create Student class with setters/getters for all the properties (First Name, Last Name, etc.)
 2. create a StudentController class with 2 methods
@@ -858,7 +848,7 @@ public String showForm(Model theModel) {
     * the object is then populated with the data entered in the form
     * returns a student-confirmation.jsp page where we can print the data properties from the bean
 
-![FormOverview](images/spring3.png)
+![FormOverview](img/spring3.png)
 
 
 3. create student-form.jsp view
@@ -866,7 +856,7 @@ public String showForm(Model theModel) {
 * we create a form aontainer with a modelAttribute, which is the bean instantiated and passed to the model
 
 
-![FormOverview](images/spring4.png)
+![FormOverview](img/spring4.png)
 
 
 * each tag has a path that corresponds to a propery of the bean (theStudent)
@@ -877,7 +867,7 @@ public String showForm(Model theModel) {
 * just to display the data
 
 
-![FormOverview](images/spring5.png)
+![FormOverview](img/spring5.png)
 
 
 Development process
@@ -1037,7 +1027,7 @@ http://hibernate.org/validator/
 1. Download JAR files from Hibernate website
 2. Add JAR files to the project
 
-![Hibernate files](images/spring6.png)
+![Hibernate files](img/spring6.png)
 
 
 
@@ -1045,7 +1035,7 @@ http://hibernate.org/validator/
 
 Objective:
 
-![ValidationForm](images/spring7.png)
+![ValidationForm](img/spring7.png)
 
 In this example, only add validation rule to LastName
 
@@ -1060,20 +1050,20 @@ Process:
 
 Step 1:
 
-![Validation1](images/spring8.png)
+![Validation1](img/spring8.png)
 
 > use @NotBlank instead of @NotNull
 
 
 Step 2:
 
-![Validation2](images/spring9.png)
+![Validation2](img/spring9.png)
 
 
 
 Step 3:
 
-![Validation3](images/spring10.png)
+![Validation3](img/spring10.png)
 
 
 This is hte important stuff. We add 2 things:
