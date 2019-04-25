@@ -275,53 +275,30 @@ To access methods and data from the superclass we use super.method() or super.da
 ### Reference vs Object vs Instance vs Class  
 
 Very good video, explains clearly references to objects
-  
-  
 
-Class: the blueprint
-
-Object = Instance: An instance of the class
-
-Reference: The address of the object
-
-  
+*Class*: the blueprint
+*Object* = Instance: An instance of the class
+*Reference*: The address of the object
 
 Example:
-
-Class: house plan
-
-Object: house built
-
-Reference=variable: The address of the house built
-
-  
+* Class: house plan
+* Object: house built
+* Reference=variable: The address of the house built
 
 We can copy the reference as many times as we want, but there is only 1 house built
 
-  
-
 In Java we always have references to Objects in memory, we never access the object directly, only through the reference
 
-  
-  
 
 ### this vs super
 
-  
-
 Very good video, explains clearly
 
-  
-
-this: used to access/call the instance variables and methods. Required when we have a parameter with the same name, to distinguish both. Commonly used in constructors and setters
-
-super: used to access/call the parent variables and methods
-
-  
+*this*: used to access/call the instance variables and methods. Required when we have a parameter with the same name, to distinguish both. Commonly used in constructors and setters
+*super*: used to access/call the parent variables and methods
 
 We can use them anywhere except on "static" areas
 
-  
 
 this(): used to call a constructor from another overloaded constructor in the same class. Can be used only in a constructor, and must be the first statement in the constructor
 
@@ -2085,6 +2062,6 @@ _________________
 
 [Back to top](#toc---table-of-contents)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NzQ1MjEyNDksLTg2MTMyOTg4NSwtMT
+eyJoaXN0b3J5IjpbLTE2NjU3NzM2NDMsLTg2MTMyOTg4NSwtMT
 QwMDc1MzA3OV19
 -->
