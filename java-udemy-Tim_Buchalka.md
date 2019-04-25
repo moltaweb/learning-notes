@@ -217,56 +217,33 @@ To instantiate:
 ```java
 ClassName myObject =  new ClassName();
 ```
+
 As a general rules, in our user-defined classes, we will define internal variables as "private" (encapsulation)
 
 We access these through getters/setters methods -> this is for encapsulation best practice Why? because this is more powerful, we can add validation, etc.
 
-  
-  
 
 ### Constructors
 
-  
-
 Constructors are special methods defined in the class. They are called when instantiating an object (like __init__() in Python)
-
-  
 
 Now, constructors can be overloaded. Exmple:
 
-  
-
 ```java
-
 BankAccount acc1 =  new BankAccount();
-
 // or
-
 BankAccount acc1 =  new BankAccount("12345", 0.0, "Bob Smith", "bob@email.com", "+34612345678");
-
 ```
-
-  
 
 Even more, we can call one constructor from another constructor. For example, when we call the empty constructor, this could call the overloaded constructor with some default parameters. Example inside the constructor definition:
 
-  
-
 ```java
-
 public BankAccount() {
-
 this("00000", 0.0, "Empty name", "no-email", "no-phone");
-
 }
-
 ```
 
-  
-
-This is optional, not mandatory. But beware, the this() line must be the first line inside the constructor method
-
-  
+This is optional, not mandatory. But beware, the `this()` line must be the first line inside the constructor method
 
 Typically we will have a global constructor with all the parameters
 
@@ -2134,6 +2111,5 @@ _________________
 
 [Back to top](#toc---table-of-contents)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NzAxMDUzMzAsLTE0MDA3NTMwNzldfQ
-==
+eyJoaXN0b3J5IjpbODcyMTM2NDE4LC0xNDAwNzUzMDc5XX0=
 -->
