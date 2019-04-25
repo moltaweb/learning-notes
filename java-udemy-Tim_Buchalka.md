@@ -299,18 +299,13 @@ Very good video, explains clearly
 
 We can use them anywhere except on "static" areas
 
+`this()`: used to call a constructor from another overloaded constructor in the same class. Can be used only in a constructor, and must be the first statement in the constructor
 
-this(): used to call a constructor from another overloaded constructor in the same class. Can be used only in a constructor, and must be the first statement in the constructor
-
-super(): used to call the parent constructor, and must be the first statement in the constructor
+`super()`: used to call the parent constructor, and must be the first statement in the constructor
 
 The Java Compiler puts a default call to super() if we don't add it
 
-  
-
 A constructor can call super() or this(), but not both
-
-  
   
 
 ### Method overloading vs. overriding
@@ -2062,6 +2057,6 @@ _________________
 
 [Back to top](#toc---table-of-contents)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NjU3NzM2NDMsLTg2MTMyOTg4NSwtMT
-QwMDc1MzA3OV19
+eyJoaXN0b3J5IjpbLTczNjYzNjU3MSwtODYxMzI5ODg1LC0xND
+AwNzUzMDc5XX0=
 -->
