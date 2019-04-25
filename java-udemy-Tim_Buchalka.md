@@ -365,24 +365,17 @@ We try and prevent possible issues:
 * accessing private data that we might not want to expose
 * if we change the name of a variable in our class, if public, we must go and change it everywhere
 * assist data validation, through constructors and getters/setters
-
-  
   
 
 ### Polymorphism
 
-  
-
 Polymorphism is the mechanism in OOP that allows actions to act differently based on the actual object that the action is begin performed on
 
-  
-  
 
 [Back to top](#toc---table-of-contents)
 
-______________
 
-  
+______________
 
 ## 8) Arrays, Java Inbuilt Lists, Autoboxing and Unboxing
 
@@ -2009,6 +2002,6 @@ _________________
 
 [Back to top](#toc---table-of-contents)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzMTYyNzMzNCwtODYxMzI5ODg1LC0xND
+eyJoaXN0b3J5IjpbMTM5MTg4MzA0MCwtODYxMzI5ODg1LC0xND
 AwNzUzMDc5XX0=
 -->
