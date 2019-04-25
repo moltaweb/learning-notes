@@ -178,9 +178,8 @@ _____________________________
 
 [Back to top](#toc---table-of-contents)
 
-_____________________________
 
-  
+_____________________________
 
 ## 5) Control Flow Statements
 
@@ -189,70 +188,35 @@ _____________________________
 
 [Back to top](#toc---table-of-contents)
 
-_____________________________
 
-  
-  
+_____________________________
 
 ## 6) OOP 1: Classes, Constructors and Inheritance
 
-  
-  
-
 ### Classes
 
-  
-
-Objects in OOP have states and behaviors
-
-  
-
+Obects in OOP have states and behaviors
 * attributes
-
 * methods
-
-  
 
 Classes are footprints for creating objects
 
-  
-
 A class could be seen as a powerful user-defined data-type (not exactly, but to give an idea)
 
-  
-
 To create a class:
-
-  
-
 ```java
-
 public  class ClassName {
-
-// attributes + methods
-
+	// attributes + methods
 }
-
 ```
-
-  
 
 This creates automatically a file `ClassName.java`
 
-  
-
 To instantiate:
 
-  
-
 ```java
-
 ClassName myObject =  new ClassName();
-
 ```
-
-  
-
 As a general rules, in our user-defined classes, we will define internal variables as "private" (encapsulation)
 
 We access these through getters/setters methods -> this is for encapsulation best practice Why? because this is more powerful, we can add validation, etc.
@@ -2170,5 +2134,6 @@ _________________
 
 [Back to top](#toc---table-of-contents)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwNDIzMjUyMiwtMTQwMDc1MzA3OV19
+eyJoaXN0b3J5IjpbLTE5NzAxMDUzMzAsLTE0MDA3NTMwNzldfQ
+==
 -->
