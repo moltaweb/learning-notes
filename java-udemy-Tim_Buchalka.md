@@ -17,27 +17,27 @@ Monopoly:
 
 ## TOC - Table of Contents
 
-[1) Course Introduction](#1-course-introduction)
-[2) Setup and First Steps](#2-Setup-and-First-Steps)
-[3) Variables, Datatypes and Operators](#3-Variables-Datatypes-and-Operators)
-[4) Java Tutorial: Expressions, Statements, Code Blocks, Methods and More](#4-Java-Tutorial-Expressions-Statements-Code-Blocks-Methods-and-More)
-[5) Control Flow Statements](#5-Control-Flow-Statements)
-[6) OOP 1: Classes, Constructors and Inheritance](#6-OOP-1-Classes,-Constructors-and-Inheritance)
-[7) OOP Part 2](#7-OOP-Part-2)
-[8) Arrays, Java Inbuilt Lists, Autoboxing and Unboxing](#8-Arrays,-Java-Inbuilt-Lists,-Autoboxing-and-Unboxing)
-[9) Inner and Abstract Classes & Interfaces](#9-Inner-and-Abstract-Classes-&-Interfaces)
-[10) GENERICS](#10-GENERICS)
-[11) NAMING CONVENTIONS](#11-NAMING-CONVENTIONS)
-[12) THE COLLECTIONS FRAMEWORK](#12-THE-COLLECTIONS-FRAMEWORK)
-[13) JAVA FX](#13-JAVA-FX)
-[14) BASIC INPUT & OUTPUT INCLUDING JAVA.UTIL](#14-BASIC-INPUT-&-OUTPUT-INCLUDING-JAVA.UTIL)
-[15) CONCURRENCY IN JAVA](#15-CONCURRENCY-IN-JAVA)
-[16) LAMBDA EXPRESSIONS](#16-LAMBDA-EXPRESSIONS)
-[17) REGULAR EXPRESSIONS](#17-REGULAR-EXPRESSIONS)
-[18) DEBUGGGING AND UNIT TESTING](#18-DEBUGGGING-AND-UNIT-TESTING)
-[19) DATABASES](#19-DATABASES)
-[20) JAVA NETWORKING PROGRAMMING](#20-JAVA-NETWORKING-PROGRAMMING)
-[21) JAVA 9 MODULE SYSTEM](#21-JAVA-9-MODULE-SYSTEM)
+[1) Course Introduction](#1-course-introduction)  
+[2) Setup and First Steps](#2-Setup-and-First-Steps)  
+[3) Variables, Datatypes and Operators](#3-Variables-Datatypes-and-Operators)  
+[4) Java Tutorial: Expressions, Statements, Code Blocks, Methods and More](#4-Java-Tutorial-Expressions-Statements-Code-Blocks-Methods-and-More)  
+[5) Control Flow Statements](#5-Control-Flow-Statements)  
+[6) OOP 1: Classes, Constructors and Inheritance](#6-OOP-1-Classes,-Constructors-and-Inheritance)  
+[7) OOP Part 2](#7-OOP-Part-2)  
+[8) Arrays, Java Inbuilt Lists, Autoboxing and Unboxing](#8-Arrays,-Java-Inbuilt-Lists,-Autoboxing-and-Unboxing)  
+[9) Inner and Abstract Classes & Interfaces](#9-Inner-and-Abstract-Classes-&-Interfaces)  
+[10) GENERICS](#10-GENERICS)  
+[11) NAMING CONVENTIONS](#11-NAMING-CONVENTIONS)  
+[12) THE COLLECTIONS FRAMEWORK](#12-THE-COLLECTIONS-FRAMEWORK)  
+[13) JAVA FX](#13-JAVA-FX)  
+[14) BASIC INPUT & OUTPUT INCLUDING JAVA.UTIL](#14-BASIC-INPUT-&-OUTPUT-INCLUDING-JAVA.UTIL)  
+[15) CONCURRENCY IN JAVA](#15-CONCURRENCY-IN-JAVA)  
+[16) LAMBDA EXPRESSIONS](#16-LAMBDA-EXPRESSIONS)  
+[17) REGULAR EXPRESSIONS](#17-REGULAR-EXPRESSIONS)  
+[18) DEBUGGGING AND UNIT TESTING](#18-DEBUGGGING-AND-UNIT-TESTING)  
+[19) DATABASES](#19-DATABASES)  
+[20) JAVA NETWORKING PROGRAMMING](#20-JAVA-NETWORKING-PROGRAMMING)  
+[21) JAVA 9 MODULE SYSTEM](#21-JAVA-9-MODULE-SYSTEM)  
 
   
 
@@ -98,14 +98,9 @@ String input = scanner.nextLine();
 scanner.close();
 ```
 
-  
-
 input numbers:
 
-  
-
 ```java
-
 // Option 1)
 int input = scanner.nextInt();
 scanner.nextLine(); // we need this to allow to scan the Enter agter typing the int
@@ -2204,5 +2199,5 @@ _________________
 
 [Back to top](#toc---table-of-contents)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MDA3NTMwNzldfQ==
+eyJoaXN0b3J5IjpbNzExNTc0ODAzLC0xNDAwNzUzMDc5XX0=
 -->
