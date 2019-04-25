@@ -103,60 +103,32 @@ input numbers:
 ```java
 // Option 1)
 int input = scanner.nextInt();
-scanner.nextLine(); // we need this to allow to scan the Enter agter typing the int
-
-  
+scanner.nextLine(); // we need this to allow to scan the Enter after typing the int
 
 // Option 2)
-
 String input = scanner.nextLine();
-
 int number = Integer.parseInt(input);
-
 ```
-
-  
-  
 
 ### Handling exceptions
 
-  
-
 We can add if-else for validation
 
-Also methid scanner.hasNextInt() is a boolean that checks whether it's an integer
-
-  
+Also method scanner.hasNextInt() is a boolean that checks whether it's an integer
 
 ```java
-
 boolean hasNextInt = scanner.hasNextInt();
-
-  
-
 if(hasNextInt) {
-
-int input = scanner.nextIne();
-
-scanner.nextLine();
-
-  
-
-// etc.
-
-  
-
+	int input = scanner.nextIne();
+	scanner.nextLine();
+	// etc.
 }
-
 ```
-
   
-
 [Back to top](#toc---table-of-contents)
 
-_____________________________
 
-  
+_____________________________
 
 ## 2) Setup and First Steps
 
@@ -175,7 +147,7 @@ _____________________________
 
 ### First steps - Creating your first Java Program
 
-  
+ 
   
 
 [Back to top](#toc---table-of-contents)
@@ -186,8 +158,7 @@ _____________________________
 
 ## 3) Variables, Datatypes and Operators
 
-  
-  
+   
 
 ### Your Programming Careers Questions Answered
 
@@ -196,9 +167,9 @@ _____________________________
 
 [Back to top](#toc---table-of-contents)
 
-_____________________________
 
-  
+
+_____________________________
 
 ## 4) Java Tutorial: Expressions, Statements, Code Blocks, Methods and More
 
@@ -2199,5 +2170,5 @@ _________________
 
 [Back to top](#toc---table-of-contents)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzExNTc0ODAzLC0xNDAwNzUzMDc5XX0=
+eyJoaXN0b3J5IjpbLTQwNDIzMjUyMiwtMTQwMDc1MzA3OV19
 -->
