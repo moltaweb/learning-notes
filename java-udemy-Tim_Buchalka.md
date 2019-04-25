@@ -245,13 +245,10 @@ this("00000", 0.0, "Empty name", "no-email", "no-phone");
 
 This is optional, not mandatory. But beware, the `this()` line must be the first line inside the constructor method
 
-Typically we will have a global constructor with all the parameters
+Typically we will have a global constructor with all the parameters. 
+Then the rest of conscuctors will call this one with `this(a, b, c, d, e)`, eventually defaulting values. 
 
-Then the rest of conscuctors will call this one with this(a, b, c, d, e)
-
-defaulting values. For example:
-
-this("0000", 0.0, c, d, e) will default a and b
+For example: `this("0000", 0.0, c, d, e)` will default a and b
 
   
   
@@ -2111,5 +2108,5 @@ _________________
 
 [Back to top](#toc---table-of-contents)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODcyMTM2NDE4LC0xNDAwNzUzMDc5XX0=
+eyJoaXN0b3J5IjpbLTg2MTMyOTg4NSwtMTQwMDc1MzA3OV19
 -->
