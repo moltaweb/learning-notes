@@ -22,69 +22,40 @@ Monopoly:
 [3) Variables, Datatypes and Operators](#3-Variables-Datatypes-and-Operators)
 [4) Java Tutorial: Expressions, Statements, Code Blocks, Methods and More](#4-Java-Tutorial-Expressions-Statements-Code-Blocks-Methods-and-More)
 [5) Control Flow Statements](#5-Control-Flow-Statements)
-
 [6) OOP 1: Classes, Constructors and Inheritance](#6-OOP-1-Classes,-Constructors-and-Inheritance)
-
 [7) OOP Part 2](#7-OOP-Part-2)
-
 [8) Arrays, Java Inbuilt Lists, Autoboxing and Unboxing](#8-Arrays,-Java-Inbuilt-Lists,-Autoboxing-and-Unboxing)
-
 [9) Inner and Abstract Classes & Interfaces](#9-Inner-and-Abstract-Classes-&-Interfaces)
-
 [10) GENERICS](#10-GENERICS)
-
 [11) NAMING CONVENTIONS](#11-NAMING-CONVENTIONS)
-
 [12) THE COLLECTIONS FRAMEWORK](#12-THE-COLLECTIONS-FRAMEWORK)
-
 [13) JAVA FX](#13-JAVA-FX)
-
 [14) BASIC INPUT & OUTPUT INCLUDING JAVA.UTIL](#14-BASIC-INPUT-&-OUTPUT-INCLUDING-JAVA.UTIL)
-
 [15) CONCURRENCY IN JAVA](#15-CONCURRENCY-IN-JAVA)
-
 [16) LAMBDA EXPRESSIONS](#16-LAMBDA-EXPRESSIONS)
-
 [17) REGULAR EXPRESSIONS](#17-REGULAR-EXPRESSIONS)
-
 [18) DEBUGGGING AND UNIT TESTING](#18-DEBUGGGING-AND-UNIT-TESTING)
-
 [19) DATABASES](#19-DATABASES)
-
 [20) JAVA NETWORKING PROGRAMMING](#20-JAVA-NETWORKING-PROGRAMMING)
-
 [21) JAVA 9 MODULE SYSTEM](#21-JAVA-9-MODULE-SYSTEM)
 
-  
-  
-  
   
 
 ________________________
 
-  
-
 ## 1) Course Introduction
-
-  
 
 ```java
 switch(variable) {
     case value1:
-        // code 1
+        // code
         break;
-
-case value2:  case value3:
-
-// code 2
-
-break;
-
-case value4:
-
-// code 1
-
-break;
+	case value2:  case value3:
+		// code
+		break;
+	case value4:
+		// code
+		break;
 
 }
 
@@ -2271,5 +2242,5 @@ _________________
 
 [Back to top](#toc---table-of-contents)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMjA2NTkxNjksMTE1NDAyMDYxOV19
+eyJoaXN0b3J5IjpbLTE0NDUwMDk3MzEsMTE1NDAyMDYxOV19
 -->
